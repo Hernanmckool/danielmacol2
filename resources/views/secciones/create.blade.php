@@ -2,5 +2,5 @@
     @section('content') 
     @include('alerts.request')
     @include('alerts.errors')
-          @include('usuario/form/usuario')
+          @include('secciones/form/secciones')
     @endsection

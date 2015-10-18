@@ -14,5 +14,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-
+ 
 Route::get('/','FrontController@index');
+Route::get('admin','FrontController@admin');
+Route::get('logout','LoginController@logout');
+Route::resource('usuario','UsuarioController');
+Route::resource('secciones','SeccionesController');
+Route::resource('categorias','CategoriasController');
+Route::resource('login','LoginController');
+

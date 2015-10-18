@@ -4,17 +4,16 @@ namespace daniel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use daniel\Http\Requests;
-use daniel\Http\Requests\CategoriaRequest;
+use daniel\Http\Requests\UserRequest;
 use daniel\Http\Controllers\Controller;
-use daniel\Secciones;
-use daniel\Categorias;
+use daniel\User;
 use Session;
 use Redirect;
 use Illuminate\Routing\Route;
 
-class CategoriasController extends Controller
+class UsuarioController extends Controller
 {
-
+    
     public function __construct(){
         $this->middleware('auth');
     }
@@ -26,8 +25,8 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        $cate = Categorias::all();       
-        return view('categorias.index', compact('cate'));
+        $users = User::all();
+        return view('usuario.index',compact('users'));
     }
 
     /**
@@ -37,8 +36,7 @@ class CategoriasController extends Controller
      */
     public function create()
     {
-        $secc = Secciones::all();
-        return view('categorias.create',compact('secc'));
+        return view('usuario.create');
     }
 
     /**
@@ -47,11 +45,18 @@ class CategoriasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoriaRequest $request)
+    public function store(UserRequest $request)
     {
-        Categorias::create($request->all());
-        Session::flash('message','Categoria Creada Exitosamente');
-        return Redirect::to('/categorias');
+        $pass1= $request->password;
+        $pass2= $request->password2;
+        if($pass1 == $pass2){
+            User::create($request->all());
+            Session::flash('message','Usuario Creado Exitosamente');
+            return Redirect::to('/usuario');
+        }else {
+            Session::flash('message-error','La contrasena no coincide');
+            return Redirect::to('/usuario/create');
+        }
     }
 
     /**

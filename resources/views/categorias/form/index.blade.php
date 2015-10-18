@@ -2,7 +2,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Vista de Usuarios</h3><br><a href="{!!URL::to('/usuario/create')!!}" class="btn btn-primary primary btn-xs" role="button">Crear usuarios</a>
+                  <h3 class="box-title">Vista de Categorias</h3><br><a href="{!!URL::to('/categorias/create')!!}" class="btn btn-primary primary btn-xs" role="button">Crear Categoria</a>
 
                   
                   <div class="box-tools">
@@ -17,18 +17,14 @@
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <thead>
-                      <th>Nombre</th>
-                      <th>Apellido</th>
-                      <th>Correo Electronico</th>
+                      <th>Categoria</th>
                       <th><div align="center"><span class="glyphicon glyphicon-cog"></span><span class="glyphicon glyphicon-wrench"></span></div></th>
                     </thead>
-                    @foreach($users as $user)
+                    @foreach($cate as $cat)
                     <tbody>
-                        <td>{{$user->nombre}}</td>
-                        <td>{{$user->apellido}}</td>
-                        <td>{{$user->email}}</td>
+                        <td>{{$cat->categoria}}</td>
                         <td align="center">
-                        <button value="{{$user->id}}" OnClick='Mostrar(this);' class='btn btn-info primary btn-xs' data-toggle='modal' data-target='#myModal'>Ver</button>
+                        <button value="{{$cat->id}}" OnClick='Mostrar(this);' class='btn btn-info primary btn-xs' data-toggle='modal' data-target='#myModal'>Ver</button>
                         <a href="{!!URL::to('/usuario/create')!!}" class="btn btn-warning primary btn-xs" role="button">Editar</a><br>
                         <a href="{!!URL::to('/usuario/create')!!}" class="btn btn-danger primary btn-xs" role="button">Eliminar</a>  
                         </td>

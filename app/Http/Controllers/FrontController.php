@@ -8,6 +8,10 @@ use daniel\Http\Controllers\Controller;
 
 class FrontController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth', ['only'=>'admin']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +19,13 @@ class FrontController extends Controller
      */
     public function index()
     {
-        return view('layouts.admin');
+        return view('index');
     }
 
+    public function admin()
+    {
+        return view('layouts.admin');
+    }
     /**
      * Show the form for creating a new resource.
      *

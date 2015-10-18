@@ -4,10 +4,19 @@ namespace daniel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use daniel\Http\Requests;
+use daniel\Http\Requests\SeccionRequest;
 use daniel\Http\Controllers\Controller;
+use daniel\Secciones;
+use Session;
+use Redirect;
+use Illuminate\Routing\Route;
 
 class SeccionesController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +24,8 @@ class SeccionesController extends Controller
      */
     public function index()
     {
-        //
+        $secc = Secciones::all();
+        return view('secciones.index',compact('secc'));
     }
 
     /**
@@ -25,7 +35,7 @@ class SeccionesController extends Controller
      */
     public function create()
     {
-        //
+        return view('secciones.create');
     }
 
     /**
@@ -34,9 +44,11 @@ class SeccionesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SeccionRequest $request)
     {
-        //
+        Secciones::create($request->all());
+        Session::flash('message','Seccion Creada Exitosamente');
+        return Redirect::to('/secciones');
     }
 
     /**

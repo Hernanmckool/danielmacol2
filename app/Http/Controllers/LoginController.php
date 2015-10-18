@@ -4,21 +4,14 @@ namespace daniel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use daniel\Http\Requests;
-use daniel\Http\Requests\CategoriaRequest;
+use daniel\Http\Requests\LoginRequest;
 use daniel\Http\Controllers\Controller;
-use daniel\Secciones;
-use daniel\Categorias;
 use Session;
 use Redirect;
-use Illuminate\Routing\Route;
+use Auth;
 
-class CategoriasController extends Controller
+class LoginController extends Controller
 {
-
-    public function __construct(){
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -26,8 +19,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        $cate = Categorias::all();       
-        return view('categorias.index', compact('cate'));
+        return view('login');
     }
 
     /**
@@ -37,21 +29,27 @@ class CategoriasController extends Controller
      */
     public function create()
     {
-        $secc = Secciones::all();
-        return view('categorias.create',compact('secc'));
+        //
     }
 
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::to('/');
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoriaRequest $request)
+    public function store(LoginRequest $request)
     {
-        Categorias::create($request->all());
-        Session::flash('message','Categoria Creada Exitosamente');
-        return Redirect::to('/categorias');
+        if(Auth::attempt(['email'=>$request['email'],'password'=>$request['password']])){
+            return Redirect::to('admin');
+        }
+            Session::flash('message-error','Correo Electronico y Contraseña no coinciden');
+            return Redirect::to('/');
     }
 
     /**

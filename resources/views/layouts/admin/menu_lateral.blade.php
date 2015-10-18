@@ -36,9 +36,9 @@
                 </a>
                 <ul class="treeview-menu"> 
                   <li><a href="{!!URL::to('/usuario')!!}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                  <li><a href="{!!URL::to('/departamento')!!}"><i class="fa fa-circle-o"></i> Departamentos</a></li>
-                  <li><a href="{!!URL::to('/cargo')!!}"><i class="fa fa-circle-o"></i> Cargos</a></li>
-                  <li><a href="{!!URL::to('/profesion')!!}"><i class="fa fa-circle-o"></i> Profesion</a></li>
+                  <li><a href="{!!URL::to('/secciones')!!}"><i class="fa fa-circle-o"></i> Secciones</a></li>
+                  <li><a href="{!!URL::to('/categorias')!!}"><i class="fa fa-circle-o"></i> Categorias</a></li>
+                  <li><a href="{!!URL::to('/articulos')!!}"><i class="fa fa-circle-o"></i> Articulos</a></li>
                 </ul>
               </li>
 
