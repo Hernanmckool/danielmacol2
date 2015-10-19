@@ -66,19 +66,14 @@
         {!!Html::image('asset/img/bg.jpg', 'User Image')!!} <br>
         {!!Html::image('asset/img/star.png', 'User Image')!!}
 	</div>
-    </header>
+    </header> 
     <!-- About -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-			     <p>El Comienzo del lince, el lobo y el olvido</p>
-			     <p>Las cortas metáforas de mi desgracia</p>
-			     <p>La promesa</p>
-			     <p>Breve despedida para una larga ausencia</p>
-			     <p>Mi viaje a ninguna parte</p>
-			     <p>Relatos de animales lejanos</p>
-			     <p>Las ganas se han largado de aquí</p>
-			     <p>Cuentos, sombras y recuerdos</p>
+                    @foreach($cats as $cat)
+                        <p>{{$cat->categoria}}</p>
+                    @endforeach
         {!!Html::image('asset/img/star.png', 'User Image')!!}
                 </div>
             </div>

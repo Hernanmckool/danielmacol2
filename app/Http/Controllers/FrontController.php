@@ -5,6 +5,7 @@ namespace daniel\Http\Controllers;
 use Illuminate\Http\Request;
 use daniel\Http\Requests;
 use daniel\Http\Controllers\Controller;
+use daniel\Categorias;
 
 class FrontController extends Controller
 {
@@ -19,13 +20,20 @@ class FrontController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $cats = Categorias::all();
+        return view('index',compact('cats'));
     }
 
     public function admin()
     {
         return view('layouts.admin');
     }
+
+    public function article()
+    {
+        return view('index_articulos');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

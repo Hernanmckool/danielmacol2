@@ -4,7 +4,13 @@ namespace daniel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use daniel\Http\Requests;
+use daniel\Http\Requests\ArticuloRequest;
 use daniel\Http\Controllers\Controller;
+use daniel\Articulos;
+use daniel\Categorias;
+use Redirect;
+use Session;
+use Illuminate\Routing\Route;
 
 class ArticulosController extends Controller
 {
@@ -20,7 +26,8 @@ class ArticulosController extends Controller
      */
     public function index()
     {
-        //
+        $arts = Articulos::articulos();
+        return view('articulos.index',compact('arts'));
     }
 
     /**
@@ -30,7 +37,8 @@ class ArticulosController extends Controller
      */
     public function create()
     {
-        //
+        $cats = Categorias::all();
+        return view('articulos.create',compact('cats'));
     }
 
     /**
@@ -39,9 +47,11 @@ class ArticulosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticuloRequest $request)
     {
-        //
+        $arts = Articulos::create($request->all());
+        Session::flash('message','Articulo creado exitosamente');
+        return Redirect::to('/articulos');
     }
 
     /**
