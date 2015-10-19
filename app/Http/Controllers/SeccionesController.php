@@ -24,7 +24,7 @@ class SeccionesController extends Controller
      */
     public function index()
     {
-        $secc = Secciones::all();
+        $secc = Secciones::paginate(6);
         return view('secciones.index',compact('secc'));
     }
 

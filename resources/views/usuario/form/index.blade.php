@@ -3,8 +3,6 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Vista de Usuarios</h3><br><a href="{!!URL::to('/usuario/create')!!}" class="btn btn-primary primary btn-xs" role="button">Crear usuarios</a>
-
-                  
                   <div class="box-tools">
                     <div class="input-group" style="width: 150px;">
                       <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
@@ -37,3 +35,4 @@
               </div><!-- /.box -->
             </div>
           </div>
+  <div align="center">{!!$users->render()!!}</div> 

@@ -12,7 +12,7 @@
                     </div>
                   </div>
                 </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
+                <div>
                   <table class="table table-hover">
                     <thead>
                       <th>Articulos</th>
@@ -33,3 +33,4 @@
               </div><!-- /.box -->
             </div>
           </div>
+  <div align="center">{!!$arts->render()!!}</div> 

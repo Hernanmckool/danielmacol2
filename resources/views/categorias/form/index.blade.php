@@ -33,3 +33,4 @@
               </div><!-- /.box -->
             </div>
           </div>
+  <div align="center">{!!$cate->render()!!}</div> 

@@ -8,7 +8,7 @@
               </div>
                 <div class="panel-body">
                   <div class="row">
-                    <div class="col-md-3 col-lg-3" align="center"> {!!Html::image('dist/img/user2-160x1603.jpg', 'User Image', array('class' => 'img-circle'))!!} </div>      
+                    <div class="col-md-3 col-lg-3" align="center"> {!!Html::image('asset/dist/img/user2-160x1603.jpg', 'User Image', array('class' => 'img-circle'))!!} </div>      
                       <div class=" col-md-9 col-lg-9 "> 
                         <table class="table table-user-information">
                           <tbody>

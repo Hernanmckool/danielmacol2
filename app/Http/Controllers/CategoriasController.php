@@ -26,7 +26,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        $cate = Categorias::all();       
+        $cate = Categorias::paginate(6);       
         return view('categorias.index', compact('cate'));
     }
 
