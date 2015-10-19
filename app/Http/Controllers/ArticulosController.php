@@ -73,7 +73,8 @@ class ArticulosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $artic = Articulos::articulos_ids($id);
+        return response()->json($artic);        
     }
 
     /**

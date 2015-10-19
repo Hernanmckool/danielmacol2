@@ -20,7 +20,6 @@
     <!-- Custom Fonts -->
     <link href="" rel="stylesheet" type="text/css">
     {!!Html::style('asset/font-awesome/css/font-awesome.min.css')!!}
-    {!!Html::style('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic')!!}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,7 +71,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     @foreach($cats as $cat)
-                        <p>{{$cat->categoria}}</p>
+                        <a class="textos" href="{!!URL::to('/index_articulos',[$cat->id])!!}">{{$cat->categoria}}</a> <br>
                     @endforeach
         {!!Html::image('asset/img/star.png', 'User Image')!!}
                 </div>

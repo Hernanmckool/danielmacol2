@@ -19,5 +19,30 @@ class Articulos extends Model
             ->select('articulos.*','categorias.categoria')
             ->get();
     }
+    public static function Articulos_id($id)
+    {
+        return DB::table('articulos')
+            ->where('articulos.id_categoria','=',$id)
+            ->join('categorias','categorias.id','=','articulos.id_categoria')
+            ->select('articulos.*','categorias.categoria')
+            ->get();
+    }
+    public static function Articulos_cat($id)
+    {
+        return DB::table('articulos')
+            ->where('articulos.id_categoria','=',$id)
+            ->join('categorias','categorias.id','=','articulos.id_categoria')
+            ->select( DB::raw('DISTINCT(categoria)') )
+            ->get();
+    }
+
+    public static function Articulos_ids($id)
+    {
+        return DB::table('articulos')
+            ->where('articulos.id','=',$id)
+            ->select('articulos.*')
+            ->get();
+    }
+
 
 }

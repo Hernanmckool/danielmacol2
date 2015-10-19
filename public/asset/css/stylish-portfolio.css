@@ -12,10 +12,17 @@ body {
     height: 100%;
   background-color:#fafaf4; 
   font-family: "le_font";
-  font-size: 14px;
+  font-size: 18px;
   font-style: normal;
   color: #494753
 }
+
+footer {
+    padding: 30px 0;
+}
+
+.textos {font-size:14; font-family: "le_font"; color:#000000; text-decoration:none}
+.textos:hover {font-size:14; font-family: "le_font"; color:#FF4000; text-decoration:none}
 
 @font-face {
   font-family: "le_font";

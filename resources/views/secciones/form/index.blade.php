@@ -18,15 +18,13 @@
                   <table class="table table-hover">
                     <thead>
                       <th>Seccion</th>
-                      <th><div align="center"><span class="glyphicon glyphicon-cog"></span><span class="glyphicon glyphicon-wrench"></span></div></th>
+                      <th><div align="center"><span class="glyphicon glyphicon-cog"></span><span class="glyphicon glyphicon-wrench"></span> Acciones</div></th>
                     </thead>
                     @foreach($secc as $sec)
                     <tbody>
                         <td>{{$sec->seccion}}</td>
                         <td align="center">
-                        <button value="{{$sec->id}}" OnClick='Mostrar(this);' class='btn btn-info primary btn-xs' data-toggle='modal' data-target='#myModal'>Ver</button>
-                        <a href="{!!URL::to('/usuario/create')!!}" class="btn btn-warning primary btn-xs" role="button">Editar</a><br>
-                        <a href="{!!URL::to('/usuario/create')!!}" class="btn btn-danger primary btn-xs" role="button">Eliminar</a>  
+                        <button value="{{$sec->id}}" OnClick='Mostrar(this);' class='btn btn-default btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>
                         </td>
                     </tbody>
                     @endforeach

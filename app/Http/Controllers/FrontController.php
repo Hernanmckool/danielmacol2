@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use daniel\Http\Requests;
 use daniel\Http\Controllers\Controller;
 use daniel\Categorias;
+use daniel\Articulos;
 
 class FrontController extends Controller
 {
@@ -29,9 +30,11 @@ class FrontController extends Controller
         return view('layouts.admin');
     }
 
-    public function article()
-    {
-        return view('index_articulos');
+    public function article($id)
+    {   
+        $art_cat = Articulos::articulos_cat($id);
+        $arts = Articulos::articulos_id($id);
+        return view('index_articulos', compact('arts','art_cat'));
     }
 
     /**

@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/','FrontController@index');
 Route::get('admin','FrontController@admin');
 Route::get('logout','LoginController@logout');
-Route::get('index_articulos','FrontController@article');
+Route::get('index_articulos/{sdfsd}','FrontController@article');
 Route::resource('usuario','UsuarioController');
 Route::resource('secciones','SeccionesController');
 Route::resource('categorias','CategoriasController');
