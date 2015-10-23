@@ -26,7 +26,7 @@
                         <td>{{$user->apellido}}</td>
                         <td>{{$user->email}}</td>
                         <td align="center">
-                        <button value="{{$user->id}}" OnClick='Mostrar(this);' class='btn btn-default btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>
+                        <button value="{{$user->id}}" OnClick='Modal_edit_usr(this);' class='btn btn-default btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>
                         </td>
                     </tbody>
                     @endforeach

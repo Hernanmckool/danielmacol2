@@ -17,7 +17,7 @@ class Articulos extends Model
         return DB::table('articulos')
             ->join('categorias','categorias.id','=','articulos.id_categoria')
             ->select('articulos.*','categorias.categoria')
-            ->paginate(6);
+            ->get();
     }
     public static function Articulos_id($id)
     {
@@ -27,6 +27,16 @@ class Articulos extends Model
             ->select('articulos.*','categorias.categoria')
             ->get();
     }
+
+    public static function Articulos_id_edit($id)
+    {
+        return DB::table('articulos')
+            ->where('articulos.id','=',$id)
+            ->join('categorias','categorias.id','=','articulos.id_categoria')
+            ->select('articulos.*','categorias.categoria')
+            ->get();
+    }
+
     public static function Articulos_cat($id)
     {
         return DB::table('articulos')

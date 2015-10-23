@@ -26,8 +26,15 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        $cate = Categorias::paginate(6);       
-        return view('categorias.index', compact('cate'));
+        return view('categorias.index');
+    }
+
+    public function listing()
+    {
+        $cate = Categorias::categorias();
+        return Response()->json(
+                $cate
+        );
     }
 
     /**
@@ -65,6 +72,12 @@ class CategoriasController extends Controller
         //
     }
 
+    public function combo()
+    {
+        $cat = Categorias::all();
+        return Response()->json($cat);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -73,7 +86,8 @@ class CategoriasController extends Controller
      */
     public function edit($id)
     {
-        //
+      $cate = Categorias::categorias_id($id);
+      return Response()->json($cate);
     }
 
     /**
@@ -85,7 +99,13 @@ class CategoriasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categ = Categorias::find($id);
+        $categ->fill($request->all());
+        $categ->save();
+
+        return Response()->json([
+            "mensaje"=>"Actualizado"
+            ]);
     }
 
     /**

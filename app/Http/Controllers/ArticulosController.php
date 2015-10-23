@@ -26,10 +26,14 @@ class ArticulosController extends Controller
      */
     public function index()
     {
-        $arts = Articulos::articulos();
-        return view('articulos.index',compact('arts'));
+        return view('articulos.index');
     }
 
+    public function Listing()
+    {
+        $arts = Articulos::articulos();
+        return Response()->json($arts);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -62,7 +66,8 @@ class ArticulosController extends Controller
      */
     public function show($id)
     {
-        //
+        $artic = Articulos::articulos_ids($id);
+        return response()->json($artic);        
     }
 
     /**
@@ -73,7 +78,7 @@ class ArticulosController extends Controller
      */
     public function edit($id)
     {
-        $artic = Articulos::articulos_ids($id);
+        $artic = Articulos::articulos_id_edit($id);
         return response()->json($artic);        
     }
 
@@ -86,7 +91,13 @@ class ArticulosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $artc = Articulos::find($id);
+        $artc->fill($request->all());
+        $artc->save();
+        
+        return Response()->json([
+            "mensaje"=>"Actualizado"
+            ]);
     }
 
     /**

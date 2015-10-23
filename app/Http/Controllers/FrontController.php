@@ -30,7 +30,7 @@ class FrontController extends Controller
         return view('layouts.admin');
     }
 
-    public function article($id)
+    public function article($id) 
     {   
         $art_cat = Articulos::articulos_cat($id);
         $arts = Articulos::articulos_id($id);

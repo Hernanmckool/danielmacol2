@@ -13,52 +13,16 @@
                         <table class="table table-user-information">
                           <tbody>
                             <tr>
-                              <td>Nro. Documento:</td>
-                              <td><input disabled="true" type="text" id="documento"></td>
+                              <td>Nombre:</td>
+                              <td><input type="text" id="nombre"></td>
                             </tr>
                             <tr>
-                              <td>Telefono:</td>
-                              <td><input disabled="true" type="text" id="telefono"></td>
-                            </tr>
-                            <tr>
-                              <td>Pais:</td>
-                              <td><input disabled="true" type="text" id="pais"></td>
-                            </tr>
-                            <tr>
-                              <td>Estado:</td>
-                              <td><input disabled="true" type="text" id="estado"></td>
-                            </tr>
-                            <tr>
-                              <td>Direccion:</td>
-                              <td><textarea disabled="true" type="text" id="direccion"></textarea></td>
-                            </tr>
-                            <tr>
-                              <td>Cod. Postal:</td>
-                              <td><input disabled="true" type="text" id="postal"></td>
-                            </tr>
-                            <tr>
-                              <td>Profesion:</td>
-                              <td><input disabled="true" type="text" id="profesion"></td>
-                            </tr>
-                            <tr>
-                              <td>Cargo:</td>
-                              <td><input disabled="true" type="text" id="cargo"></td>
-                            </tr>
-                            <tr>
-                              <td>Departamento:</td>
-                              <td><input disabled="true" type="text" id="departamento"></td>
+                              <td>Apellido:</td>
+                              <td><input type="text" id="apellido"></td>
                             </tr>
                             <tr>
                               <td>Email:</td>
-                              <td><input disabled="true" type="text" id="email"></td>
-                            </tr>
-                            <tr>
-                              <td>Tipo Operador:</td>
-                              <td><input disabled="true" type="text" id="toperador"></td>
-                            </tr>
-                            <tr>
-                              <td>Usuario:</td>
-                              <td><input disabled="true" type="text" id="usuario"></td>
+                              <td><input type="text" id="email"></td>
                             </tr>
                           </tbody>
                         </table>                          

@@ -18,19 +18,14 @@
                   <table class="table table-hover">
                     <thead>
                       <th>Categoria</th>
+                      <th>Seccion</th>
                       <th><div align="center"><span class="glyphicon glyphicon-cog"></span><span class="glyphicon glyphicon-wrench"></span> Acciones</div></th>
                     </thead>
-                    @foreach($cate as $cat)
-                    <tbody>
-                        <td>{{$cat->categoria}}</td>
-                        <td align="center">
-                        <button value="{{$cat->id}}" OnClick='Mostrar(this);' class='btn btn-default btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>
-                        </td>
+                    <tbody id="table_cat">
                     </tbody>
-                    @endforeach
                   </table>
+                  <input type="hidden" id="tipo" value="categorias">
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
             </div>
           </div>
-  <div align="center">{!!$cate->render()!!}</div> 

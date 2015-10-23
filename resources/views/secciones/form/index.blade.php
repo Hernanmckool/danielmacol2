@@ -20,17 +20,11 @@
                       <th>Seccion</th>
                       <th><div align="center"><span class="glyphicon glyphicon-cog"></span><span class="glyphicon glyphicon-wrench"></span> Acciones</div></th>
                     </thead>
-                    @foreach($secc as $sec)
-                    <tbody>
-                        <td>{{$sec->seccion}}</td>
-                        <td align="center">
-                        <button value="{{$sec->id}}" OnClick='Mostrar(this);' class='btn btn-default btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>
-                        </td>
-                    </tbody>
-                    @endforeach
+                    <tbody id="table_sec"></tbody>
                   </table>
+                  <input type="hidden" id="tipo" value="secciones">
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
             </div>
           </div>
-  <div align="center">{!!$secc->render()!!}</div> 
+

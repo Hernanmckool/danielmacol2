@@ -1,6 +1,13 @@
 @extends('layouts.admin')
     @section('content')
     @include('alerts.success')
+    @include('alerts.act_sec')
+    @include('alerts.elim_sec')
     @include('alerts.request')
+    @include('secciones.edit')
+    @include('modal.modal_eliminar')
           @include('secciones/form/index')
+    @endsection
+     @section('scripts')
+        {!!Html::script('asset/js/script2.js')!!}
     @endsection

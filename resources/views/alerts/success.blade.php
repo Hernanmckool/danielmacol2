@@ -1,6 +1,10 @@
 @if(Session::has('message'))
-<div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<script type="text/javascript">
+setTimeout(function() {
+    $("#msj-success").fadeOut(1500);
+},5000);
+</script>
+<div id="msj-success" class="alert alert-success alert-dismissible" role="alert">
     {{Session::get('message')}}
  </div>
 @endif

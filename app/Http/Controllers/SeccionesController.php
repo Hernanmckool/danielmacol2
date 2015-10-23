@@ -24,9 +24,16 @@ class SeccionesController extends Controller
      */
     public function index()
     {
-        $secc = Secciones::paginate(6);
-        return view('secciones.index',compact('secc'));
+        return view('secciones.index');
     }
+
+    public function listing(){
+       $secc = Secciones::all();
+       return response()->json(
+            $secc->toArray()
+        ); 
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -62,6 +69,11 @@ class SeccionesController extends Controller
         //
     }
 
+    public function combo(){
+        $sec = Secciones::all();
+        return Response()->json($sec);
+    }
+ 
     /**
      * Show the form for editing the specified resource.
      *
@@ -70,7 +82,8 @@ class SeccionesController extends Controller
      */
     public function edit($id)
     {
-        //
+      $secc = Secciones::find($id);
+      return Response()->json($secc);
     }
 
     /**
@@ -82,7 +95,13 @@ class SeccionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $sec = Secciones::find($id);
+       $sec->fill($request->all());
+       $sec->save();
+
+       return Response()->json([
+        "mensaje"=>"Actualizado"
+        ]);
     }
 
     /**
@@ -93,6 +112,11 @@ class SeccionesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $secc = Secciones::find($id);
+        $secc->delete();
+
+        return Response()->json([
+            "mensaje" => "borrado"
+        ]);
     }
 }

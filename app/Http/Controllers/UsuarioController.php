@@ -78,7 +78,8 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::find($id);
+        return Response()->json($users);
     }
 
     /**
