@@ -24,11 +24,10 @@
             <input type="hidden" id="id" />
           </div>
           <div class="modal-body">
-            <p>Esta seguro que quiere eliminar este registro?</p>
+            <p id="tipos"></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-outline" onclick="Elim_sec();">Continuar</button>
+            <div id="div"></div>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->

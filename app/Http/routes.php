@@ -24,6 +24,7 @@ Route::get('secciones/combo','SeccionesController@combo');
 Route::get('secciones/listing','SeccionesController@listing');
 Route::get('categorias/listing','CategoriasController@listing');
 Route::get('articulos/listing','ArticulosController@listing');
+Route::get('usuario/listing','UsuarioController@listing');
 Route::get('categorias/combo','CategoriasController@combo');
 Route::resource('usuario','UsuarioController');
 Route::resource('secciones','SeccionesController');

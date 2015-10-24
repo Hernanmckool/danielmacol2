@@ -5,6 +5,7 @@ namespace daniel\Http\Controllers;
 use Illuminate\Http\Request;
 use daniel\Http\Requests;
 use daniel\Http\Requests\UserRequest;
+use daniel\Http\Requests\UserUpdateRequest;
 use daniel\Http\Controllers\Controller;
 use daniel\User;
 use Session;
@@ -25,8 +26,15 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(6);
-        return view('usuario.index',compact('users'));
+        return view('usuario.index');
+    }
+
+    public function listing()
+    {
+        $usr = User::all();
+        return Response()->json(
+            $usr->toArray()
+            );
     }
 
     /**
@@ -89,9 +97,15 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->fill($request->all());
+        $user->save();
+
+        return Response()->json([
+            "mensaje"=>"Usuario Actualizado"
+            ]);
     }
 
     /**

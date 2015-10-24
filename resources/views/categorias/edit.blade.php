@@ -35,7 +35,6 @@
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                     <span class="pull-right">
                         {!!link_to('#', $title='Actualizar', $attributes = ['id'=>'act_categoria', 'class'=>'btn btn-sm btn-warning'], $secure = null)!!}
-                        {!!link_to('#', $title='Eliminar', $attributes = ['id'=>'elim_categoria', 'class'=>'btn btn-sm btn-danger'], $secure = null)!!}
                     </span>
                 </div>              
             </div>

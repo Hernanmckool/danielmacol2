@@ -108,6 +108,11 @@ class ArticulosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $art = Articulos::find($id);
+        $art->delete();
+
+        return Response()->json([
+            "mensaje"=>"borrado"
+            ]);
     }
 }

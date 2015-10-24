@@ -5,7 +5,7 @@
     @include('alerts.elim_sec')
     @include('alerts.request')
     @include('secciones.edit')
-    @include('modal.modal_eliminar')
+    @include('modal.modal_elim')
           @include('secciones/form/index')
     @endsection
      @section('scripts')

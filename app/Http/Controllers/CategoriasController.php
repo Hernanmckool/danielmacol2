@@ -116,6 +116,11 @@ class CategoriasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cate = Categorias::find($id);
+        $cate->delete();
+
+        return Response()->json([
+            "mensaje"=>"`borrado"
+            ]);
     }
 }
