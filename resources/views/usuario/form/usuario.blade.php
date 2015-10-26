@@ -1,4 +1,4 @@
-{!!Form::open(['route'=>'usuario.store', 'method'=>'POST'])!!}
+{!!Form::open(['route'=>'usuario.store', 'method'=>'POST', 'files'=> true])!!}
 <div class="box box-info">
     <div class="box-header with-border">
       <h3 class="box-title">Registrar Usuarios</h3>
@@ -38,8 +38,12 @@
    	</div><!-- /.row -->
     <br>
   	<div class="row">
-        <div class="col-lg-6"><br>
-            {!!Form::submit('Registrar',['class'=>'btn btn-primary btn-block'])!!}
+        <div class="col-lg-6">
+          {!!Form::label('avatar','Avatar:')!!}
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          {!!Form::file('path')!!}
+        </div>
         </div><!-- /.col-lg-6 -->
         <div class="col-lg-6">
           {!!Form::label('repitecontraseña','Repite la Contraseña:')!!}
@@ -50,4 +54,5 @@
         </div><!-- /.col-lg-6 -->
    	</div><!-- /.row -->
 </div><!-- /.box -->
+            {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
 {!!Form::close()!!}

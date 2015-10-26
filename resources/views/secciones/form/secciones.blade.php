@@ -7,7 +7,7 @@
         <div class="col-lg-6">
           {!!Form::label('seccion','Seccion:')!!}
           <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+            <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
             {!!Form::text('seccion',null,['class'=>'form-control', 'placeholder'=>'Ingresa la seccion'])!!}
           </div>
         </div><!-- /.col-lg-6 -->

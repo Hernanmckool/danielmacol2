@@ -97,7 +97,7 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoriaRequest $request, $id)
     {
         $categ = Categorias::find($id);
         $categ->fill($request->all());

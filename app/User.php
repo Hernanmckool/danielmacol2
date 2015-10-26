@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Carbon\Carbon;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -23,13 +24,15 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $table = 'users';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['nombre', 'apellido', 'email', 'password'];
+    protected $fillable = ['nombre', 'apellido', 'email', 'password', 'path'];
 
+    public function setPathAttribute($path){
+        if(!empty($path)){
+            $name = Carbon::now()->second.$path->getClientOriginalName();
+            $this->attributes['path'] = $name;
+            \Storage::disk('local')->put($name, \File::get($path));
+        }
+    }
     /**
      * The attributes excluded from the model's JSON form.
      *

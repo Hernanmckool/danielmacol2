@@ -1,3 +1,6 @@
+  <?php
+  $im=Auth::user()->path;
+  ?>
       <header class="main-header">
         <!-- Logo -->
         <a href="index2.html" class="logo">
@@ -17,17 +20,17 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                {!!Html::image('asset/dist/img/user2-160x160.jpg', 'User Image', array('class' => 'user-image'))!!}
+                  {!!Html::image('asset/avartars/'.$im, 'User Image', array('class' => 'user-image'))!!}                    
                     <span>
-                    Hernan Perez
+                    {!!Auth::user()->nombre!!}&nbsp;&nbsp;{!!Auth::user()->apellido!!}
                     <i class="caret"></i>
                     </span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header bg-light-blue">
-                {!!Html::image('asset/dist/img/user2-160x160.jpg', 'User Image', array('class' => 'img-circle'))!!}
-                        <p>Hernan Perez</p>
+                    {!!Html::image('asset/avartars/'.$im, 'User Image', array('class' => 'img-circle'))!!}                    
+                        <p>{!!Auth::user()->nombre!!}&nbsp;&nbsp;{!!Auth::user()->apellido!!}</p>
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">

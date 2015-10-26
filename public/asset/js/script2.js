@@ -180,38 +180,38 @@ $("#act_usuario").click(function(){
 		    },5000);
 		},
         error: function(msj) { 
-		var n = msj.responseJSON.nombre;
-		var a = msj.responseJSON.apellido;
-		var e = msj.responseJSON.email;
-		$("#msj_nom").empty();
-		$("#msj_ape").empty();
-		$("#msj_ema").empty();
+		var v1 = msj.responseJSON.nombre;
+		var v2 = msj.responseJSON.apellido;
+		var v3 = msj.responseJSON.email;
+		$("#msj_v1").empty();
+		$("#msj_v2").empty();
+		$("#msj_v3").empty();
 
 		Mostrar_usr();
 
 		$("#myModal").modal('toggle');
 
-		if (n != undefined){
-		$("#msj_nom").html(n);
-		$("#msj-error-valid-nom").fadeIn(2000);
+		if (v1 != undefined){
+		$("#msj_v1").html(v1);
+		$("#msj-error-valid-v1").fadeIn(2000);
 		    setTimeout(function() {
-		        $("#msj-error-valid-nom").fadeOut(1500);
+		        $("#msj-error-valid-v1").fadeOut(1500);
 		    },5000);
 		}
 
-		if (a != undefined){
-		$("#msj_ape").html(a);
-		$("#msj-error-valid-ape").fadeIn(2000);
+		if (v2 != undefined){
+		$("#msj_v2").html(v2);
+		$("#msj-error-valid-v2").fadeIn(2000);
 		    setTimeout(function() {
-		        $("#msj-error-valid-ape").fadeOut(1500);
+		        $("#msj-error-valid-v2").fadeOut(1500);
 		    },5000);
 		}
 
-		if (e != undefined){
-		$("#msj-error-valid-ema").fadeIn(2000);
-		$("#msj_ema").html(e);
+		if (v3 != undefined){
+		$("#msj_v3").html(v3);
+		$("#msj-error-valid-v3").fadeIn(2000);
 		    setTimeout(function() {
-		        $("#msj-error-valid-ema").fadeOut(1500);
+		        $("#msj-error-valid-v3").fadeOut(1500);
 		    },5000);
 		}
 		}
@@ -238,8 +238,23 @@ $("#act_seccion").click(function(){
 		    setTimeout(function() {
 		        $("#msj-success-act").fadeOut(1500);
 		    },5000);
-		}
+		},
+        error: function(msj) { 
+		var v1 = msj.responseJSON.seccion;
+		$("#msj_v1").empty();
 
+		Mostrar_sec();
+
+		$("#myModal").modal('toggle');
+
+		if (v1 != undefined){
+		$("#msj_v1").html(v1);
+		$("#msj-error-valid-v1").fadeIn(2000);
+		    setTimeout(function() {
+		        $("#msj-error-valid-v1").fadeOut(1500);
+		    },5000);
+		}
+		}
 	});
 });
 
@@ -263,6 +278,22 @@ $("#act_categoria").click(function(){
 		    setTimeout(function() {
 		        $("#msj-success-act").fadeOut(1500);
 		    },5000);
+		},
+        error: function(msj) { 
+		var v1 = msj.responseJSON.categoria;
+		$("#msj_v1").empty();
+
+		Mostrar_cat();
+
+		$("#myModal").modal('toggle');
+
+		if (v1 != undefined){
+		$("#msj_v1").html(v1);
+		$("#msj-error-valid-v1").fadeIn(2000);
+		    setTimeout(function() {
+		        $("#msj-error-valid-v1").fadeOut(1500);
+		    },5000);
+		}
 		}
 
 	});
@@ -289,8 +320,32 @@ $("#act_articulo").click(function(){
 		    setTimeout(function() {
 		        $("#msj-success-act").fadeOut(1500);
 		    },5000);
-		}
+		},
+        error: function(msj) { 
+		var v1 = msj.responseJSON.titulo;
+		var v2 = msj.responseJSON.articulo;
+		$("#msj_v1").empty();
+		$("#msj_v2").empty();
 
+		Mostrar_art();
+
+		$("#myModal").modal('toggle');
+
+		if (v1 != undefined){
+		$("#msj_v1").html(v1);
+		$("#msj-error-valid-v1").fadeIn(2000);
+		    setTimeout(function() {
+		        $("#msj-error-valid-v1").fadeOut(1500);
+		    },5000);
+		}
+		if (v2 != undefined){
+		$("#msj_v2").html(v2);
+		$("#msj-error-valid-v2").fadeIn(2000);
+		    setTimeout(function() {
+		        $("#msj-error-valid-v2").fadeOut(1500);
+		    },5000);
+		}
+		}
 	});
 });
 
@@ -385,6 +440,40 @@ function Elim_art(){
 		dataType: 'json',
 		success: function(){
 			Mostrar_art();
+			$("#myModalElim").modal('toggle');
+			$("#msj-success-elim").fadeIn(2000);
+		    setTimeout(function() {
+		        $("#msj-success-elim").fadeOut(1500);
+		    },5000);
+		}
+	});
+
+}
+
+function Modal_elim_usr(btn){
+	var texto = "Esta seguro de eliminar este Usuario?"
+    $('#id').empty();
+    $('#tipos').empty();
+    $('#div').empty();
+
+	$("#id").val(btn.value);
+	$("#tipos").html(texto);
+	$('#div').append("<button type='button' class='btn btn-outline pull-left' data-dismiss='modal'>Cerrar</button><button type='button' class='btn btn-outline' onclick='Elim_usr();'>Continuar</button>");
+
+}
+
+function Elim_usr(){
+	var value = $("#id").val();
+	var route = "/usuario/"+value+"";
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'DELETE',
+		dataType: 'json',
+		success: function(){
+			Mostrar_usr();
 			$("#myModalElim").modal('toggle');
 			$("#msj-success-elim").fadeIn(2000);
 		    setTimeout(function() {

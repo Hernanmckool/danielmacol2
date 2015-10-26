@@ -4,6 +4,7 @@
     @include('alerts.act_sec')
     @include('alerts.elim_sec')
     @include('alerts.request')
+    @include('alerts.validacion')
     @include('secciones.edit')
     @include('modal.modal_elim')
           @include('secciones/form/index')

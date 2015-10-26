@@ -4,6 +4,7 @@
     @include('alerts.act_cat')
     @include('alerts.request')
     @include('categorias.edit')
+    @include('alerts.validacion')
     @include('modal.modal_elim')
           @include('categorias/form/index')
     @endsection

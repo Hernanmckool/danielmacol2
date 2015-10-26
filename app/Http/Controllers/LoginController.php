@@ -35,7 +35,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return Redirect::to('/');
+        return Redirect::to('/login');
     }
     /**
      * Store a newly created resource in storage.

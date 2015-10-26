@@ -116,6 +116,11 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return Response()->json([
+            "mensaje"=>"Borrado"
+            ]);
     }
 }
