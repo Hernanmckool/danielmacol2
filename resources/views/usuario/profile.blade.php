@@ -8,7 +8,7 @@
               </div>
                 <div class="panel-body">
                   <div class="row">
-                    <div class="col-md-3 col-lg-3" align="center"> {!!Html::image('asset/dist/img/user2-160x1603.jpg', 'User Image', array('class' => 'img-circle'))!!} </div>
+                    <div class="col-md-3 col-lg-3" align="center"> {!!Html::image('asset/img/33avatar5.png', 'User Image', array('class' => 'img-circle', 'width' => 80 , 'height' => 80))!!} </div>
                       <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
                       <input type="hidden" id="id">
                       <div class=" col-md-9 col-lg-9 "> 
