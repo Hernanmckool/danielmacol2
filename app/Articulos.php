@@ -19,6 +19,14 @@ class Articulos extends Model
             ->select('articulos.*','categorias.categoria')
             ->get();
     }
+
+    public static function Count_articulos()
+    {
+        return DB::table('articulos')
+            ->select('articulos.*')
+            ->count();
+    }
+
     public static function Articulos_id($id)
     {
         return DB::table('articulos')

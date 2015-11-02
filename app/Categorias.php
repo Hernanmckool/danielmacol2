@@ -27,6 +27,11 @@ class Categorias extends Model
             ->select('categorias.*','secciones.seccion')
             ->get();
     }
-
+    public static function Count_categorias()
+    {
+        return DB::table('categorias')
+            ->select('categorias.*')
+            ->count();
+    }
 
 } 

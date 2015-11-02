@@ -10,4 +10,6 @@
     @endsection
     @section('scripts')
         {!!Html::script('asset/js/script2.js')!!}
+        {!!Html::script('asset/js/buscar.js')!!}
+        {!!Html::script('asset/js/jquery.uitablefilter.js')!!}
     @endsection

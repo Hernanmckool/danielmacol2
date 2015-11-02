@@ -44,10 +44,11 @@ function Mostrar_usr(){
 }
 
 function Mostrar_sec(){
-    $('#table_sec').empty();
+    $('#table_sec').append("<tr align='center'><td colspan='2'><img src='asset/img/loading.gif' alt='Cargando' width='60' height='60'> </td><td>");
 	var route = "/secciones/listing";
 
 	$.get(route, function(res){
+		$('#table_sec').empty();			
 		$.each(res,function(key,value){
 		$('#table_sec').append("<tr><td>"+value.seccion+"</td><td><div align='center'><button value="+value.id+" OnClick='Modal_edit_sec(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_sec(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button>");
 		});		
@@ -55,10 +56,11 @@ function Mostrar_sec(){
 }
 
 function Mostrar_cat(){
-    $('#table_cat').empty();
+    $('#table_cat').append("<tr align='center'><td colspan='3'><img src='asset/img/loading.gif' alt='Cargando' width='60' height='60'> </td><td>");
 	var route = "/categorias/listing";
 
 	$.get(route, function(res){
+	    $('#table_cat').empty();
 		$.each(res,function(key,value){
 		$('#table_cat').append("<tr><td>"+value.categoria+"</td><td>"+value.seccion+"</td><td><div align='center'><button value="+value.id+" OnClick='Modal_edit_cat(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_cat(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button>");
 		});		
@@ -66,10 +68,11 @@ function Mostrar_cat(){
 }
 
 function Mostrar_art(){
-    $('#table_art').empty();
+    $('#table_art').append("<tr align='center'><td colspan='3'><img src='asset/img/loading.gif' alt='Cargando' width='60' height='60'> </td><td>");
 	var route = "/articulos/listing";
 
 	$.get(route, function(res){
+	    $('#table_art').empty();
 		$.each(res,function(key,value){
 		$('#table_art').append("<tr><td>"+value.titulo+"</td><td>"+value.categoria+"</td><td><div align='center'><button value="+value.id+" OnClick='Modal_edit_art(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_art(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button>");
 		});		
@@ -464,22 +467,8 @@ function Modal_elim_usr(btn){
 
 function Elim_usr(){
 	var value = $("#id").val();
-	var route = "/usuario/"+value+"";
+	var route = "/usuario/"+value+"/eliminar";
 	var token = $("#token").val();
-
-	$.ajax({
-		url: route,
-		headers: {'X-CSRF-TOKEN': token},
-		type: 'DELETE',
-		dataType: 'json',
-		success: function(){
-			Mostrar_usr();
-			$("#myModalElim").modal('toggle');
-			$("#msj-success-elim").fadeIn(2000);
-		    setTimeout(function() {
-		        $("#msj-success-elim").fadeOut(1500);
-		    },5000);
-		}
-	});
+	window.location.href = route;
 
 }

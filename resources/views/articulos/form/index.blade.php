@@ -4,8 +4,8 @@
                 <div class="box-header">
                   <h3 class="box-title">Vista de Articulos</h3><br><a href="{!!URL::to('/articulos/create')!!}" class="btn btn-primary primary btn-xs" role="button">Crear Articulos</a> 
                   <div class="box-tools">
-                    <div class="input-group" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
+                    <div class="input-group" style="width: 150px;" id="busqueda">
+                      <input type="text" id="q" name="q" name="table_search" class="form-control input-sm pull-right" placeholder="Buscar">
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </div>
@@ -13,7 +13,7 @@
                   </div>
                 </div><!-- /.box-header -->
                 <div>
-                  <table class="table table-hover">
+                  <table class="table table-hover" id="table">
                     <thead>
                       <th>Titulo</th>
                       <th>Categoria</th>

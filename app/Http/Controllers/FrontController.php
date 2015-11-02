@@ -7,6 +7,8 @@ use daniel\Http\Requests;
 use daniel\Http\Controllers\Controller;
 use daniel\Categorias;
 use daniel\Articulos;
+use daniel\Secciones;
+use daniel\User;
 
 class FrontController extends Controller
 {
@@ -27,7 +29,11 @@ class FrontController extends Controller
 
     public function admin()
     {
-        return view('layouts.admin');
+        $user_count = User::count_usuarios();
+        $sec_count = Secciones::count_secciones();
+        $cat_count = Categorias::count_categorias();
+        $art_count = Articulos::count_articulos();
+        return view('admin.index',compact('art_count','user_count','sec_count','cat_count'));
     }
 
     public function article($id) 

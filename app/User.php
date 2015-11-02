@@ -10,6 +10,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Carbon\Carbon;
+use DB;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -47,5 +48,10 @@ class User extends Model implements AuthenticatableContract,
             $this->attributes['password'] = \Hash::make($valor);
         }
     }
-
+    public static function Count_usuarios()
+    {
+        return DB::table('users')
+            ->select('users.*')
+            ->count();
+    }
 }
