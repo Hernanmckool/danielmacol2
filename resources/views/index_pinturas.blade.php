@@ -15,7 +15,7 @@
     {!!Html::style('asset/css/bootstrap.min.css')!!}
 
     <!-- Custom CSS -->
-    {!!Html::style('asset/css/stylish-portfolio.css')!!}
+    {!!Html::style('asset/css/stylish-portfolio_pinturas.css')!!}
 
     <!-- Custom Fonts -->
     <link href="" rel="stylesheet" type="text/css">
@@ -62,18 +62,18 @@
     <header id="top">
     <br>
     <div align="center">
-        {!!Html::image('asset/img/bg.jpg', 'User Image')!!} <br>
-        {!!Html::image('asset/img/star.png', 'User Image')!!}
-	</div>
+        {!!Html::image('asset/img/bg2.jpg', 'Logo danielmacol')!!} <br>
+        {!!Html::image('asset/img/star.png', 'Star')!!}
+    </div>
     </header> 
     <!-- About -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     @foreach($cats as $cat)
-                        <a class="textos" href="{!!URL::to('/index_articulos',[$cat->id])!!}">{{$cat->categoria}}</a> <br>
+                        <a class="textos" href="{!!URL::to('/index_articulos_pinturas',[$cat->id])!!}">{{$cat->categoria}}</a> <br>
                     @endforeach
-        {!!Html::image('asset/img/star.png', 'User Image')!!}
+                    {!!Html::image('asset/img/star.png', 'star')!!}
                 </div>
             </div>
             <div class="row">
@@ -87,7 +87,7 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Daniel Macol 2015 <br>Buenos Aires, Argentina</p>
+                    <p class="text-muted">Copyright &copy; Daniels Macol 2015 <br>Buenos Aires, Argentina</p>
                 </div>
             </div>
         </div>

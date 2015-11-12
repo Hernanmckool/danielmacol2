@@ -74,7 +74,7 @@ class CategoriasController extends Controller
 
     public function combo()
     {
-        $cat = Categorias::all();
+        $cat = Categorias::CategoriasPoemas();
         return Response()->json($cat);
     }
 

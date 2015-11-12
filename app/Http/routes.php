@@ -15,13 +15,16 @@ Route::get('/', function () {
 });
 */ 
  
-Route::get('/','FrontController@index');
-Route::get('admin','FrontController@admin');
+Route::get('poema','FrontPoemasController@index');
+Route::get('pintura','FrontPinturasController@index');
+Route::get('admin','FrontPoemasController@admin');
 Route::get('logout','LoginController@logout');
-Route::get('index_articulos/{id}','FrontController@article');
+Route::get('index_articulos_poemas/{id}','FrontPoemasController@article');
+Route::get('index_articulos_pinturas/{id}','FrontPinturasController@article');
 Route::get('articulos/{id}/show','ArticulosController@show');
 Route::get('usuario/{id}/eliminar','UsuarioController@eliminar');
 Route::get('usuario/{id}/cambiar','UsuarioController@cambiar');
+Route::get('pinturas/{id}/eliminar','PinturasController@eliminar');
 Route::get('secciones/combo','SeccionesController@combo');
 Route::get('secciones/listing','SeccionesController@listing');
 Route::get('categorias/listing','CategoriasController@listing');
@@ -32,5 +35,6 @@ Route::resource('usuario','UsuarioController');
 Route::resource('secciones','SeccionesController');
 Route::resource('categorias','CategoriasController');
 Route::resource('articulos','ArticulosController');
+Route::resource('pinturas','PinturasController');
 Route::resource('login','LoginController');
 

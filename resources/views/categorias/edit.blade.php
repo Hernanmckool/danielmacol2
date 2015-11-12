@@ -19,6 +19,10 @@
                               <td><input type="text" id="categoria" style="width: 100%;"></td>
                             </tr>
                             <tr>
+                              <td>Descripcion: <label for="">*(Opcional)</label></td>
+                              <td><input type="text" id="descripcion" style="width: 100%;"></td>
+                            </tr>
+                            <tr>
                               <td>Seccion:</td>
                               <td>
                                 <select id="seccion" name="seccion" class="form-control" style="width: 100%;">

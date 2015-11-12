@@ -1,19 +1,6 @@
 <div class="row">
   <div class="col-lg-3 col-xs-6">
     <!-- small box -->
-    <div class="small-box bg-aqua">
-      <div class="inner">
-        <h3>{{$user_count}}</h3>
-        <p>Usuarios</p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-person-add"></i>
-      </div>
-      <a href="{!!URL::to('/usuario')!!}" class="small-box-footer">Mas Informacion <i class="fa fa-arrow-circle-right"></i></a>
-    </div>
-  </div><!-- ./col -->
-  <div class="col-lg-3 col-xs-6">
-    <!-- small box -->
     <div class="small-box bg-green">
       <div class="inner">
         <h3>{{$sec_count}}</h3>
@@ -51,16 +38,29 @@
       <a href="{!!URL::to('/articulos')!!}" class="small-box-footer">Mas Informacion <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div><!-- ./col -->
+  <div class="col-lg-3 col-xs-6">
+    <!-- small box -->
+    <div class="small-box bg-aqua">
+      <div class="inner">
+        <h3>{{$pint_count}}</h3>
+        <p>Pinturas</p>
+      </div>
+      <div class="icon">
+        <i class="ion-images"></i>
+      </div>
+      <a href="{!!URL::to('/pinturas')!!}" class="small-box-footer">Mas Informacion <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+  </div><!-- ./col -->
 </div><!-- /.row -->
 <br><br>
 <div class="row">
   <div class="col-lg-6 col-xs-12" align="center">
-    <a href="/" target="_new">
+    <a href="/poema" target="_new">
         {!!Html::image('asset/img/bg.jpg', 'User Image')!!}
     </a>
   </div>
   <div class="col-lg-6 col-xs-12" align="center">
-    <a href="/" target="_new">
+    <a href="/pintura" target="_new">
         {!!Html::image('asset/img/bg2.jpg', 'User Image')!!}
     </a>
   </div>

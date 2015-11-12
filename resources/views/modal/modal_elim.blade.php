@@ -19,7 +19,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Eliminar Seccion</h4>
+            <h4 class="modal-title"><p id="tit"></p></h4>
             <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
             <input type="hidden" id="id" />
           </div>

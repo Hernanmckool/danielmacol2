@@ -13,6 +13,12 @@
                   </div>
                 </div><!-- /.box-header -->
                 <div>
+<!--                
+<div class="material-switch pull-right">
+    <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox"/>
+    <label for="someSwitchOptionSuccess" class="label-success"></label>
+</div>
+-->
                   <table class="table table-hover" id="table">
                     <thead>
                       <th>Titulo</th>

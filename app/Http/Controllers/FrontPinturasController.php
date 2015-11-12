@@ -6,11 +6,10 @@ use Illuminate\Http\Request;
 use daniel\Http\Requests;
 use daniel\Http\Controllers\Controller;
 use daniel\Categorias;
-use daniel\Articulos;
+use daniel\Pinturas;
 use daniel\Secciones;
-use daniel\User;
 
-class FrontController extends Controller
+class FrontPinturasController extends Controller
 {
 
     public function __construct(){
@@ -23,24 +22,15 @@ class FrontController extends Controller
      */
     public function index()
     {
-        $cats = Categorias::all();
-        return view('index',compact('cats'));
-    }
-
-    public function admin()
-    {
-        $user_count = User::count_usuarios();
-        $sec_count = Secciones::count_secciones();
-        $cat_count = Categorias::count_categorias();
-        $art_count = Articulos::count_articulos();
-        return view('admin.index',compact('art_count','user_count','sec_count','cat_count'));
+        $cats = Categorias::CategoriasPinturas();
+        return view('index_pinturas',compact('cats'));
     }
 
     public function article($id) 
     {   
-        $art_cat = Articulos::articulos_cat($id);
-        $arts = Articulos::articulos_id($id);
-        return view('index_articulos', compact('arts','art_cat'));
+        $pin_cat = Pinturas::pinturas_cat($id);
+        $pins = Pinturas::pinturas_id($id);
+        return view('index_articulos_pinturas', compact('pins','pin_cat'));
     }
 
     /**

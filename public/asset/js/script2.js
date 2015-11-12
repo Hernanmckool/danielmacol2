@@ -15,6 +15,13 @@ $(document).ready(function(){
 		Mostrar_usr();
 	}
 
+function cambiacolor_over(celda){ 
+	celda.style.backgroundColor="#ff0000" 
+} 
+function cambiacolor_out(celda){ 
+	celda.style.backgroundColor="#ffffff" 
+}
+
 });
 
 
@@ -119,6 +126,7 @@ function Modal_edit_cat(btn){
 	var route2= "/secciones/combo";
     $('#id').empty();
     $('#categoria').empty();
+    $('#descripcion').empty();
     $('#seccion').empty();
 
     $.get(route2, function(data){
@@ -131,6 +139,7 @@ function Modal_edit_cat(btn){
 		$(res).each(function(key,value){
 			$("#id").val(value.id);
 			$("#categoria").val(value.categoria);
+			$("#descripcion").val(value.descripcion);
 			$('#seccion > option[value="'+value.id_seccion+'"]').attr('selected', 'selected');
 		});
 	});
@@ -264,16 +273,18 @@ $("#act_seccion").click(function(){
 $("#act_categoria").click(function(){
 	var value = $("#id").val();
 	var	cate = $("#categoria").val();
+	var	desc = $("#descripcion").val();
 	var	secc = $("#seccion").val();
 	var route = "/categorias/"+value+"";
 	var token = $("#token").val();
+
 
 	$.ajax({
 		url: route,
 		headers: {'X-CSRF-TOKEN': token},
 		type: 'PUT',
 		dataType: 'json',
-		data: {categoria: cate, id_seccion: secc},
+		data: {categoria: cate, descripcion: desc, id_seccion: secc},
 		success: function(){
 			Mostrar_cat();
 			$("#myModal").modal('toggle');
@@ -352,14 +363,18 @@ $("#act_articulo").click(function(){
 	});
 });
 
+
 function Modal_elim_sec(btn){
 	var texto = "Esta seguro de eliminar esta Seccion?"
+	var titulo = "Eliminar Seccion"
     $('#id').empty();
     $('#tipos').empty();
     $('#div').empty();
 
 	$("#id").val(btn.value);
 	$("#tipos").html(texto);
+	$("#tit").html(texto);
+	$("#tit").html(titulo);
 	$('#div').append("<button type='button' class='btn btn-outline pull-left' data-dismiss='modal'>Cerrar</button><button type='button' class='btn btn-outline' onclick='Elim_sec();'>Continuar</button>");
 }
 
@@ -387,12 +402,14 @@ function Elim_sec(){
 
 function Modal_elim_cat(btn){
 	var texto = "Esta seguro de eliminar esta Categoria?"
+	var titulo = "Eliminar Categoria"
     $('#id').empty();
     $('#tipos').empty();
     $('#div').empty();
 
 	$("#id").val(btn.value);
 	$("#tipos").html(texto);
+	$("#tit").html(titulo);
 	$('#div').append("<button type='button' class='btn btn-outline pull-left' data-dismiss='modal'>Cerrar</button><button type='button' class='btn btn-outline' onclick='Elim_cat();'>Continuar</button>");
 
 }
@@ -421,12 +438,14 @@ function Elim_cat(){
 
 function Modal_elim_art(btn){
 	var texto = "Esta seguro de eliminar este Articulo?"
+	var titulo = "Eliminar Articulo"
     $('#id').empty();
     $('#tipos').empty();
     $('#div').empty();
 
 	$("#id").val(btn.value);
 	$("#tipos").html(texto);
+	$("#tit").html(titulo);
 	$('#div').append("<button type='button' class='btn btn-outline pull-left' data-dismiss='modal'>Cerrar</button><button type='button' class='btn btn-outline' onclick='Elim_art();'>Continuar</button>");
 
 }
@@ -455,12 +474,14 @@ function Elim_art(){
 
 function Modal_elim_usr(btn){
 	var texto = "Esta seguro de eliminar este Usuario?"
+	var titulo = "Eliminar Usuario"
     $('#id').empty();
     $('#tipos').empty();
     $('#div').empty();
 
 	$("#id").val(btn.value);
 	$("#tipos").html(texto);
+	$("#tit").html(titulo);
 	$('#div').append("<button type='button' class='btn btn-outline pull-left' data-dismiss='modal'>Cerrar</button><button type='button' class='btn btn-outline' onclick='Elim_usr();'>Continuar</button>");
 
 }
@@ -471,4 +492,40 @@ function Elim_usr(){
 	var token = $("#token").val();
 	window.location.href = route;
 
+}
+
+function Modal_elim_pint(btn){
+	var texto = "Esta seguro de eliminar esta Pintura?"
+	var titulo = "Eliminar Pintura"
+    $('#id').empty();
+    $('#tit').empty();
+    $('#tipos').empty();
+    $('#div').empty();
+
+	$("#id").val(btn.value);
+	$("#tipos").html(texto);
+	$("#tit").html(titulo);
+	$('#div').append("<button type='button' class='btn btn-outline pull-left' data-dismiss='modal'>Cerrar</button><button type='button' class='btn btn-outline' onclick='Elim_pint();'>Continuar</button>");
+}
+
+function Elim_pint(){
+	var value = $("#id").val();
+	var route = "/pinturas/"+value+"/eliminar";
+	window.location.href = route;
+
+}
+
+function Modal_ver_paint(btn){
+    $('#paint').empty();
+	$('#titulos').empty();
+	$('#titulos').html($("#titu").val());
+	$('#paint').append("<tr><td><img src='asset/pinturas/"+btn.value+"' alt=''></td></tr>");
+}
+
+function Modal_ver_paint_prin(btn){
+	console.log(btn.id);
+    $('#paint').empty();
+	$('#titulos').empty();
+	$('#titulos').html($("#titu").val());
+	$('#paint').append("<tr><td><img src='asset('asset/pinturas/"+btn.id+"')' alt=''></td></tr>");
 }

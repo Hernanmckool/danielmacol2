@@ -41,7 +41,7 @@
         <div class="col-lg-6">
           {!!Form::label('avatar','Avatar:')!!}
         <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <span class="input-group-addon"><i class="ion-images"></i></span>
           {!!Form::file('path')!!}
         </div>
         </div><!-- /.col-lg-6 -->
@@ -53,6 +53,7 @@
         </div>
         </div><!-- /.col-lg-6 -->
    	</div><!-- /.row -->
+    <br>
 </div><!-- /.box -->
             {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
 {!!Form::close()!!}

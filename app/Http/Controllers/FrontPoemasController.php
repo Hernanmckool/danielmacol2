@@ -4,21 +4,19 @@ namespace daniel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use daniel\Http\Requests;
-use daniel\Http\Requests\ArticuloRequest;
 use daniel\Http\Controllers\Controller;
-use daniel\Articulos;
 use daniel\Categorias;
-use Redirect;
-use Session;
-use Illuminate\Routing\Route;
+use daniel\Articulos;
+use daniel\Secciones;
+use daniel\User;
+use daniel\Pinturas;
 
-class ArticulosController extends Controller
+class FrontPoemasController extends Controller
 {
- 
-    public function __construct(){
-        $this->middleware('auth', ['only'=>['create','index','store']]);
-    }
 
+    public function __construct(){
+        $this->middleware('auth', ['only'=>'admin']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,14 +24,26 @@ class ArticulosController extends Controller
      */
     public function index()
     {
-        return view('articulos.index');
+        $cats = Categorias::all();
+        return view('index_poemas',compact('cats'));
     }
 
-    public function Listing()
-    {
-        $arts = Articulos::articulos();
-        return Response()->json($arts);
+    public function admin()
+    { 
+        $pint_count = Pinturas::count_pinturas();
+        $sec_count = Secciones::count_secciones();
+        $cat_count = Categorias::count_categorias();
+        $art_count = Articulos::count_articulos();
+        return view('admin.index',compact('art_count','pint_count','sec_count','cat_count'));
     }
+
+    public function article($id) 
+    {   
+        $art_cat = Articulos::articulos_cat($id);
+        $arts = Articulos::articulos_id($id);
+        return view('index_articulos_poemas', compact('arts','art_cat'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,8 +51,7 @@ class ArticulosController extends Controller
      */
     public function create()
     {
-        $cats = Categorias::CategoriasPoemas();
-        return view('articulos.create',compact('cats'));
+        //
     }
 
     /**
@@ -51,11 +60,9 @@ class ArticulosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ArticuloRequest $request)
+    public function store(Request $request)
     {
-        $arts = Articulos::create($request->all());
-        Session::flash('message','Articulo creado exitosamente');
-        return Redirect::to('/articulos');
+        //
     }
 
     /**
@@ -66,8 +73,7 @@ class ArticulosController extends Controller
      */
     public function show($id)
     {
-        $artic = Articulos::articulos_ids($id);
-        return response()->json($artic);        
+        //
     }
 
     /**
@@ -78,8 +84,7 @@ class ArticulosController extends Controller
      */
     public function edit($id)
     {
-        $artic = Articulos::articulos_id_edit($id);
-        return response()->json($artic);        
+        //
     }
 
     /**
@@ -89,15 +94,9 @@ class ArticulosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ArticuloRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $artc = Articulos::find($id);
-        $artc->fill($request->all());
-        $artc->save();
-        
-        return Response()->json([
-            "mensaje"=>"Actualizado"
-            ]);
+        //
     }
 
     /**
@@ -108,11 +107,6 @@ class ArticulosController extends Controller
      */
     public function destroy($id)
     {
-        $art = Articulos::find($id);
-        $art->delete();
-
-        return Response()->json([
-            "mensaje"=>"borrado"
-            ]);
+        //
     }
 }

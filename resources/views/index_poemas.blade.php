@@ -15,7 +15,7 @@
     {!!Html::style('asset/css/bootstrap.min.css')!!}
 
     <!-- Custom CSS -->
-    {!!Html::style('asset/css/stylish-portfolio.css')!!}
+    {!!Html::style('asset/css/stylish-portfolio_poemas.css')!!}
 
     <!-- Custom Fonts -->
     <link href="" rel="stylesheet" type="text/css">
@@ -59,47 +59,23 @@
     </nav>
 
     <!-- Header -->
+    <header id="top">
+    <br>
+    <div align="center">
+        {!!Html::image('asset/img/bg.jpg', 'Logo danielmacol')!!} <br>
+        {!!Html::image('asset/img/star.png', 'Star')!!}
+	</div>
+    </header> 
     <!-- About -->
         <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div>&nbsp;</div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    @foreach($cats as $cat)
+                        <a class="textos" href="{!!URL::to('/index_articulos_poemas',[$cat->id])!!}">{{$cat->categoria}}</a> <br>
+                    @endforeach
+        {!!Html::image('asset/img/star.png', 'star')!!}
+                </div>
             </div>
-            <div class="col-lg-12">
-                <div>&nbsp;</div>
-            </div>
-            <div class="col-lg-12">
-                <div>&nbsp;</div>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2" align="center"><br>
-                <a href="/">
-                    {!!Html::image('asset/img/bg.jpg', 'User Image')!!}
-                </a>
-            </div>
-            <div class="col-xs-0 col-sm-2 col-md-3 col-lg-1">
-              &nbsp;
-            </div>
-            <!-- /.col-md-4 -->
-            <div class="col-xs-12 col-sm-5 col-md-3 col-lg-4">
-                <h3>@foreach($art_cat as $cat)
-                    <p> <strong>{{$cat->categoria}}</strong> </p>
-                @endforeach
-                </h4>
-                <?php $num=1;?>
-                @foreach($arts as $art)
-                    <a class="textos" href="#" onclick="Mostrar({{$art->id}})">{{$num++}}. {{$art->titulo}}</a><br>
-                @endforeach
-            </div>
-            <!-- /.col-md-4 -->
-            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-5">
-            <table id="table"></table>
-            </div>
-            <!-- /.col-md-4 -->
-        </div>
-        <footer>
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <ul class="list-inline">
@@ -114,7 +90,7 @@
                     <p class="text-muted">Copyright &copy; Daniel Macol 2015 <br>Buenos Aires, Argentina</p>
                 </div>
             </div>
-        </footer>        </div>
+        </div>
 
     <!-- jQuery -->
     {!!Html::script('asset/js/jquery.js')!!}
@@ -122,7 +98,7 @@
     <!-- Bootstrap Core JavaScript -->
     {!!Html::script('asset/js/bootstrap.min.js')!!}
 
-    {!!Html::script('asset/js/script2.js')!!}
+    {!!Html::script('asset/js/script.js')!!}
 
 </body>
 

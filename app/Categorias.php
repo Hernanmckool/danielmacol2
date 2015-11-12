@@ -9,7 +9,7 @@ class Categorias extends Model
 {
     protected $table="categorias";
 
-    protected $fillable= ['categoria','status','id_seccion'];
+    protected $fillable= ['categoria','descripcion','status','id_seccion'];
 
     public static function Categorias_id($id)
     {
@@ -24,6 +24,22 @@ class Categorias extends Model
     {
         return DB::table('categorias')
             ->join('secciones','secciones.id','=','categorias.id_seccion')
+            ->select('categorias.*','secciones.seccion')
+            ->get();
+    }
+    public static function CategoriasPoemas()
+    {
+        return DB::table('categorias','secciones')
+            ->join('secciones','secciones.id','=','categorias.id_seccion')
+            ->where('secciones.seccion','=','poemas')
+            ->select('categorias.*','secciones.seccion')
+            ->get();
+    }
+    public static function CategoriasPinturas()
+    {
+        return DB::table('categorias','secciones')
+            ->join('secciones','secciones.id','=','categorias.id_seccion')
+            ->where('secciones.seccion','=','pinturas')
             ->select('categorias.*','secciones.seccion')
             ->get();
     }

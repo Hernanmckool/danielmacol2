@@ -48,6 +48,11 @@ return [
             'root'   => public_path('asset/avartars'),
         ],
 
+        'otro' => [
+            'driver' => 'local',
+            'root'   => public_path('asset/pinturas'),
+        ],
+
         'ftp' => [
             'driver'   => 'ftp',
             'host'     => 'ftp.example.com',

@@ -29,6 +29,7 @@
                   <li><a href="{!!URL::to('/secciones')!!}"><i class="fa fa-circle-o"></i> Secciones</a></li>
                   <li><a href="{!!URL::to('/categorias')!!}"><i class="fa fa-circle-o"></i> Categorias</a></li>
                   <li><a href="{!!URL::to('/articulos')!!}"><i class="fa fa-circle-o"></i> Articulos</a></li>
+                  <li><a href="{!!URL::to('/pinturas')!!}"><i class="fa fa-circle-o"></i> Pinturas</a></li>
                 </ul>
               </li>
         </section>
