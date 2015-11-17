@@ -121,12 +121,12 @@ function cambiacolor_out(celda){ celda.style.backgroundColor="#303030" }
                             {{$twitter_in}}{{Html::image('asset/img/twitter.png', 'User Image')}}{{$twitter_out}}
                             </div>
 
-                             ">
+                             "><span title=" ">
                               <p class="descri">
                                 <b>{{$pint->titulo}}</b>
                                 <br>&nbsp;&nbsp;&nbsp;
                                 {{$pint->resena}}
-                              </p>
+                              </p></span>
                             </a>
                             </td>
                         </tr>
