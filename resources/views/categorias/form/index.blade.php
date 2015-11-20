@@ -21,6 +21,7 @@
                       <th>Categoria</th>
                       <th>Seccion</th>
                       <th><div align="center"><span class="glyphicon glyphicon-cog"></span><span class="glyphicon glyphicon-wrench"></span> Acciones</div></th>
+                      <th>Estado</th>
                     </thead>
                     <tbody id="table_cat">
                     </tbody>

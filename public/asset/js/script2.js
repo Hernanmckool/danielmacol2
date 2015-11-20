@@ -57,7 +57,7 @@ function Mostrar_sec(){
 	$.get(route, function(res){
 		$('#table_sec').empty();			
 		$.each(res,function(key,value){
-		$('#table_sec').append("<tr><td>"+value.seccion+"</td><td><div align='center'><button value="+value.id+" OnClick='Modal_edit_sec(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_sec(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button>");
+		$('#table_sec').append("<tr><td>"+value.seccion+"</td><td width='10%'><div align='center'><button value="+value.id+" OnClick='Modal_edit_sec(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_sec(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button></td><td width='10%'><label class='switch switch-green'><input type='checkbox' class='switch-input' checked><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label></td>");
 		});		
 	}); 
 }
@@ -69,7 +69,7 @@ function Mostrar_cat(){
 	$.get(route, function(res){
 	    $('#table_cat').empty();
 		$.each(res,function(key,value){
-		$('#table_cat').append("<tr><td>"+value.categoria+"</td><td>"+value.seccion+"</td><td><div align='center'><button value="+value.id+" OnClick='Modal_edit_cat(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_cat(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button>");
+		$('#table_cat').append("<tr><td>"+value.categoria+"</td><td>"+value.seccion+"</td><td width='10%'><div align='center'><button value="+value.id+" OnClick='Modal_edit_cat(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_cat(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button></td><td width='10%'><label class='switch switch-green'><input type='checkbox' class='switch-input' checked><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label></td>");
 		});		
 	}); 
 }
@@ -81,7 +81,7 @@ function Mostrar_art(){
 	$.get(route, function(res){
 	    $('#table_art').empty();
 		$.each(res,function(key,value){
-		$('#table_art').append("<tr><td>"+value.titulo+"</td><td>"+value.categoria+"</td><td><div align='center'><button value="+value.id+" OnClick='Modal_edit_art(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_art(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button>");
+		$('#table_art').append("<tr><td>"+value.titulo+"</td><td>"+value.categoria+"</td><td width='10%'><div align='center'><button value="+value.id+" OnClick='Modal_edit_art(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_art(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button></td><td width='10%'><label class='switch switch-green'><input type='checkbox' class='switch-input' checked><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label></td>");
 		});		
 	}); 
 }

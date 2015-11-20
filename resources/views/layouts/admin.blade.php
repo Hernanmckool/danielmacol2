@@ -14,6 +14,7 @@
     {!!Html::style('asset/css/_all-skins.min.css')!!}
     {!!Html::style('asset/css/ionicons.min.css')!!}
     {!!Html::style('asset/css/check.css')!!}
+    {!!Html::style('asset/css/style_switch.css')!!}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
