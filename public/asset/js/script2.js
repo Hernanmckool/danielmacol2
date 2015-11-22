@@ -22,8 +22,29 @@ function cambiacolor_out(celda){
 	celda.style.backgroundColor="#ffffff" 
 }
 
+$(function() {
+	$('#toggle-two').bootstrapToggle({
+	  on: 'Enabled',
+	  off: 'Disabled'
+	});
+})
+
 });
 
+function estado(btn){ 
+	var	id = btn.id;
+	var	dato = btn.value;
+	var route = "/secciones/"+id+"/"+dato+"/editar";
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		dataType: 'json',
+		data: {status: dato},
+	});
+	Mostrar_sec();
+}
 
 
 function Mostrar(lnk){
@@ -57,7 +78,10 @@ function Mostrar_sec(){
 	$.get(route, function(res){
 		$('#table_sec').empty();			
 		$.each(res,function(key,value){
-		$('#table_sec').append("<tr><td>"+value.seccion+"</td><td width='10%'><div align='center'><button value="+value.id+" OnClick='Modal_edit_sec(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_sec(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button></td><td width='10%'><label class='switch switch-green'><input type='checkbox' class='switch-input' checked><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label></td>");
+		if(value.status == 1){
+		var check = "checked";			
+		}
+		$('#table_sec').append("<tr><td>"+value.seccion+"</td><td width='10%'><div align='center'><button value="+value.id+" OnClick='Modal_edit_sec(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_sec(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button></td><td width='10%'><label class='switch switch-green'><input type='checkbox' value='"+value.status+"' id='"+value.id+"' class='switch-input' onchange='estado_sec(this)' "+check+" ><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label></td>");
 		});		
 	}); 
 }
@@ -69,7 +93,10 @@ function Mostrar_cat(){
 	$.get(route, function(res){
 	    $('#table_cat').empty();
 		$.each(res,function(key,value){
-		$('#table_cat').append("<tr><td>"+value.categoria+"</td><td>"+value.seccion+"</td><td width='10%'><div align='center'><button value="+value.id+" OnClick='Modal_edit_cat(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_cat(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button></td><td width='10%'><label class='switch switch-green'><input type='checkbox' class='switch-input' checked><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label></td>");
+		if(value.status == 1){
+		var check = "checked";			
+		}
+		$('#table_cat').append("<tr><td>"+value.categoria+"</td><td>"+value.seccion+"</td><td width='10%'><div align='center'><button value="+value.id+" OnClick='Modal_edit_cat(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_cat(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button></td><td width='10%'><label class='switch switch-green'><input type='checkbox' class='switch-input' value='"+value.status+"' id='"+value.id+"' class='switch-input' onchange='estado_cat(this)' "+check+" ><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label></td>");
 		});		
 	}); 
 }
@@ -81,7 +108,10 @@ function Mostrar_art(){
 	$.get(route, function(res){
 	    $('#table_art').empty();
 		$.each(res,function(key,value){
-		$('#table_art').append("<tr><td>"+value.titulo+"</td><td>"+value.categoria+"</td><td width='10%'><div align='center'><button value="+value.id+" OnClick='Modal_edit_art(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_art(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button></td><td width='10%'><label class='switch switch-green'><input type='checkbox' class='switch-input' checked><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label></td>");
+		if(value.status == 1){
+		var check = "checked";			
+		}
+		$('#table_art').append("<tr><td>"+value.titulo+"</td><td>"+value.categoria+"</td><td width='10%'><div align='center'><button value="+value.id+" OnClick='Modal_edit_art(this);' class='btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil' data-toggle='modal' data-target='#myModal'></button>&nbsp;&nbsp;<button value="+value.id+" OnClick='Modal_elim_art(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button></td><td width='10%'><label class='switch switch-green'><input type='checkbox' class='switch-input' value='"+value.status+"' id='"+value.id+"' class='switch-input' onchange='estado_art(this)' "+check+" ><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label></td>");
 		});		
 	}); 
 }
@@ -528,4 +558,49 @@ function Modal_ver_paint_prin(btn){
 	$('#titulos').empty();
 	$('#titulos').html($("#titu").val());
 	$('#paint').append("<tr><td><img src='asset('asset/pinturas/"+btn.id+"')' alt=''></td></tr>");
+}
+
+function estado_sec(btn){ 
+	var	id = btn.id;
+	var	dato = btn.value;
+	var route = "/secciones/"+id+"/"+dato+"/editar";
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		dataType: 'json',
+		data: {status: dato},
+	});
+	Mostrar_sec();
+}
+
+function estado_cat(btn){ 
+	var	id = btn.id;
+	var	dato = btn.value;
+	var route = "/categorias/"+id+"/"+dato+"/editar";
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		dataType: 'json',
+		data: {status: dato},
+	});
+	Mostrar_cat();
+}
+
+function estado_art(btn){ 
+	var	id = btn.id;
+	var	dato = btn.value;
+	var route = "/articulos/"+id+"/"+dato+"/editar";
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		dataType: 'json',
+		data: {status: dato},
+	});
+	Mostrar_art();
 }

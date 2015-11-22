@@ -8,6 +8,7 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
           {!!Form::text('categoria',null,['class'=>'form-control', 'placeholder'=>'Ingresa la Categoria'])!!}
+        <input type="hidden" value="0" id="status" name="status">
         </div>
         </div><!-- /.col-lg-6 -->
         <div class="col-lg-6">

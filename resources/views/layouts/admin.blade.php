@@ -51,6 +51,7 @@
     {!!Html::script('asset/js/jQuery-2.1.4.min.js')!!}
     {!!Html::script('asset/js/bootstrap.min.js')!!}
     {!!Html::script('asset/js/app.min.js')!!}
+    {!!Html::script('asset/js/bootstrap-toggle.min.js')!!}
     @section('scripts')
     @show
   </body>

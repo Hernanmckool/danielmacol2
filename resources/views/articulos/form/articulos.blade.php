@@ -38,6 +38,7 @@
           <textarea class="textarea" name="articulo" id="articulo" placeholder="Escribe aqui tu articulo" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
       </div>
     </div>
+    <input type="hidden" value="0" id="status" name="status">
     {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}    
 </div><!-- /.box -->
 {!!Form::close()!!}

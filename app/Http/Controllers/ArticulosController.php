@@ -100,6 +100,23 @@ class ArticulosController extends Controller
             ]);
     }
 
+    public function editar($id, $dato)
+    {
+        $sec = Articulos::find($id);
+        if($dato==1){
+            $dato=0;
+            $sec->fill(['status' => $dato,]);
+            $sec->save();
+        }else{
+            $dato=1;
+            $sec->fill(['status' => $dato,]);
+            $sec->save();
+        }
+       return Response()->json([
+        "mensaje"=>"Checkbox Actualizado"
+        ]);
+    }
+
     /**
      * Remove the specified resource from storage.
      *
