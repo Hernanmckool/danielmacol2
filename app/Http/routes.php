@@ -34,6 +34,8 @@ Route::get('categorias/combo','CategoriasController@combo');
 Route::get('secciones/{id}/{dato}/editar','SeccionesController@editar');
 Route::get('categorias/{id}/{dato}/editar','CategoriasController@editar');
 Route::get('articulos/{id}/{dato}/editar','ArticulosController@editar');
+Route::get('pinturas/{id}/{dato}/editar','PinturasController@editar');
+Route::get('usuario/{id}/{dato}/editar','UsuarioController@editar');
 Route::resource('usuario','UsuarioController');
 Route::resource('secciones','SeccionesController');
 Route::resource('categorias','CategoriasController');

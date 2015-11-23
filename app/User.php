@@ -25,7 +25,7 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $table = 'users';
 
-    protected $fillable = ['nombre', 'apellido', 'email', 'password', 'path'];
+    protected $fillable = ['nombre', 'apellido', 'email', 'password', 'status', 'path'];
 
     public function setPathAttribute($path){
         if(!empty($path)){

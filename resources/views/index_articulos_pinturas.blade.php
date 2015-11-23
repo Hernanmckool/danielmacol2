@@ -13,13 +13,10 @@
 
     <!-- Bootstrap Core CSS -->
     {!!Html::style('asset/css/bootstrap.min.css')!!}
-
     <!-- Custom CSS -->
     {!!Html::style('asset/css/stylish-portfolio_pinturas.css')!!}
     {!!Html::style('asset/css/magnific-popup.css')!!}
-
     <!-- Custom Fonts -->
-    <link href="" rel="stylesheet" type="text/css">
     {!!Html::style('asset/font-awesome/css/font-awesome.min.css')!!}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -39,29 +36,25 @@ function cambiacolor_out(celda){ celda.style.backgroundColor="#303030" }
 
 <body>
 
-
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
+                <a href="#top"  onclick = $("#menu-close").click(); >Daniel Macol</a>
             </li>
             <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+                <a href="#top" onclick = $("#menu-close").click(); >Inicio</a>
             </li>
             <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+                <a href="#about" onclick = $("#menu-close").click(); >Biografia</a>
             </li>
             <li>
-                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
+                <a href="#services" onclick = $("#menu-close").click(); >Portafolio</a>
             </li>
             <li>
-                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
-            </li>
-            <li>
-                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contacto</a>
             </li>
         </ul>
     </nav>
@@ -83,7 +76,7 @@ function cambiacolor_out(celda){ celda.style.backgroundColor="#303030" }
         <div class="col-md-2">
             <div align="center">
                 <div>
-                <a href="/">
+                <a href="/pintura">
                     {!!Html::image('asset/img/bg2.jpg', 'Logo Daniel', array('width' => 110 , 'height' => 140))!!}
                 </a>
                 </div>
@@ -137,7 +130,7 @@ function cambiacolor_out(celda){ celda.style.backgroundColor="#303030" }
     </div>
         <div align="center">{!!$pins->render()!!}</div>
 </div>
-        <footer>
+        <div align="center">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <ul class="list-inline">
@@ -152,17 +145,18 @@ function cambiacolor_out(celda){ celda.style.backgroundColor="#303030" }
                     <p class="text-muted">Copyright &copy; Daniel Macol 2015 <br>Buenos Aires, Argentina</p>
                 </div>
             </div>
-        </footer>        </div>
+        </div>        
+</div>
 
     <!-- jQuery -->
     {!!Html::script('asset/js/jquery.js')!!}
-
     <!-- Bootstrap Core JavaScript -->
     {!!Html::script('asset/js/bootstrap.min.js')!!}
-
     {!!Html::script('asset/js/script2.js')!!}
+    {!!Html::script('asset/js/script.js')!!}
     {!!Html::script('asset/js/image.js')!!}    
     {!!Html::script('asset/js/jquery.magnific-popup.js')!!}
 </body>
 
 </html>
+ 

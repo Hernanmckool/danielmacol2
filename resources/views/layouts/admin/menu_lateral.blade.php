@@ -18,18 +18,18 @@
             <li class="header">Menu Principal</li>
 
               <!-- Menu 1 -->              
-              <li class="treeview">
+              <li class="active treeview">
                 <a href="#">
                   <i class="fa fa-pie-chart"></i>
                   <span>Operaciones</span>
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu"> 
-                  <li><a href="{!!URL::to('/usuario')!!}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                  <li><a href="{!!URL::to('/secciones')!!}"><i class="fa fa-circle-o"></i> Secciones</a></li>
-                  <li><a href="{!!URL::to('/categorias')!!}"><i class="fa fa-circle-o"></i> Categorias</a></li>
-                  <li><a href="{!!URL::to('/articulos')!!}"><i class="fa fa-circle-o"></i> Articulos</a></li>
-                  <li><a href="{!!URL::to('/pinturas')!!}"><i class="fa fa-circle-o"></i> Pinturas</a></li>
+                  <li><a href="{!!URL::to('/usuario')!!}"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>
+                  <li><a href="{!!URL::to('/secciones')!!}"><i class="ion-briefcase"></i>&nbsp;&nbsp;&nbsp;&nbsp;Secciones</a></li>
+                  <li><a href="{!!URL::to('/categorias')!!}"><i class="ion-bag"></i>&nbsp;&nbsp;&nbsp;&nbsp;Categorias</a></li>
+                  <li><a href="{!!URL::to('/articulos')!!}"><i class="ion-clipboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;Articulos</a></li>
+                  <li><a href="{!!URL::to('/pinturas')!!}"><i class="ion-images"></i>&nbsp;&nbsp;&nbsp;&nbsp;Pinturas</a></li>
                 </ul>
               </li>
         </section>

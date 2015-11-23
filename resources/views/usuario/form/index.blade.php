@@ -1,3 +1,6 @@
+<?php
+$id = Auth::user()->id;
+?>
 <div class="row">
   <div class="col-xs-12">
     <div class="box">
@@ -18,16 +21,27 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Correo Electronico</th>
-            <th><div align="center"><span class="glyphicon glyphicon-cog"></span><span class="glyphicon glyphicon-wrench"></span> Acciones</div></th>
+            <th width="10%"><div align="center"><span class="glyphicon glyphicon-cog"></span><span class="glyphicon glyphicon-wrench"></span> Acciones</div></th>
+            <th width="10%"><div align="center">Estado</div></th>
           </thead>
             @foreach($users as $user)
             <tbody>
                 <td>{{$user->nombre}}</td>
                 <td>{{$user->apellido}}</td>
                 <td>{{$user->email}}</td>
-                <td>
-            {!!link_to_route('usuario.edit', $title = '', $parameters = $user->id, $attributes = ['class'=> 'btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil']);!!}
-            <button value="{{$user->id}}" OnClick='Modal_elim_usr(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button>
+                <td width="10%" align="center">
+                {!!link_to_route('usuario.edit', $title = '', $parameters = $user->id, $attributes = ['class'=> 'btn btn-sm btn-warning btn-flat, glyphicon glyphicon-pencil']);!!}
+
+                <?php if($user->id != $id){?>
+                <button value="{{$user->id}}" OnClick='Modal_elim_usr(this);' class='btn btn-sm btn-danger btn-flat, glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModalElim'></button>
+                 <?php }?>
+
+                <td width="10%">
+                <?php if($user->id != $id){?>
+                <label class='switch switch-green'><input type='checkbox' value='{{$user->status}}' id='{{$user->id}}' class='switch-input' onchange='estado_usr(this)' <?php if($user->status==1) echo "checked"?> ><span class='switch-label' data-on='Activo' data-off='Inactivo'></span><span class='switch-handle'></span></label>
+                <?php }?>
+                </td>
+
             </tbody>
             @endforeach
         </table>

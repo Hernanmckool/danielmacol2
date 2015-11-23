@@ -22,13 +22,6 @@ function cambiacolor_out(celda){
 	celda.style.backgroundColor="#ffffff" 
 }
 
-$(function() {
-	$('#toggle-two').bootstrapToggle({
-	  on: 'Enabled',
-	  off: 'Disabled'
-	});
-})
-
 });
 
 function estado(btn){ 
@@ -603,4 +596,34 @@ function estado_art(btn){
 		data: {status: dato},
 	});
 	Mostrar_art();
+}
+
+function estado_pin(btn){ 
+	var	id = btn.id;
+	var	dato = btn.value;
+	var route = "/pinturas/"+id+"/"+dato+"/editar";
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		dataType: 'json',
+		data: {status: dato},
+	});
+
+}
+
+function estado_usr(btn){ 
+	var	id = btn.id;
+	var	dato = btn.value;
+	var route = "/usuario/"+id+"/"+dato+"/editar";
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		dataType: 'json',
+		data: {status: dato},
+	});
+
 }

@@ -49,7 +49,7 @@ class LoginController extends Controller
             return Redirect::to('admin');
         }
             Session::flash('message-error','Correo Electronico y Contraseña no coinciden');
-            return Redirect::to('/');
+            return Redirect::to('/login');
     }
 
     /**

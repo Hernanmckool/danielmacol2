@@ -101,6 +101,23 @@ class PinturasController extends Controller
         Session::flash('message','Pintura editada Correctamente');
         return Redirect::to('/pinturas');
     }
+ 
+     public function editar($id, $dato)
+    {
+        $sec = Pinturas::find($id);
+        if($dato==1){
+            $dato=0;
+            $sec->fill(['status' => $dato,]);
+            $sec->save();
+        }else{
+            $dato=1;
+            $sec->fill(['status' => $dato,]);
+            $sec->save();
+        }
+       return Response()->json([
+        "mensaje"=>"Checkbox Actualizado"
+        ]);
+    }
 
     /**
      * Remove the specified resource from storage.

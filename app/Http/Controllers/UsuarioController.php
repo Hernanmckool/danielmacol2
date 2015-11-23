@@ -120,6 +120,23 @@ class UsuarioController extends Controller
 
     }
 
+     public function editar($id, $dato)
+    {
+        $sec = User::find($id);
+        if($dato==1){
+            $dato=0;
+            $sec->fill(['status' => $dato,]);
+            $sec->save();
+        }else{
+            $dato=1;
+            $sec->fill(['status' => $dato,]);
+            $sec->save();
+        }
+       return Response()->json([
+        "mensaje"=>"Checkbox Actualizado"
+        ]);
+    }
+
     public function cambiar(UpdatePassword $request, $id)
     {
         $pass1= $request->password;

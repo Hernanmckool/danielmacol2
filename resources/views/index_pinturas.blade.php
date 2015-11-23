@@ -13,10 +13,8 @@
 
     <!-- Bootstrap Core CSS -->
     {!!Html::style('asset/css/bootstrap.min.css')!!}
-
     <!-- Custom CSS -->
     {!!Html::style('asset/css/stylish-portfolio_pinturas.css')!!}
-
     <!-- Custom Fonts -->
     <link href="" rel="stylesheet" type="text/css">
     {!!Html::style('asset/font-awesome/css/font-awesome.min.css')!!}
@@ -38,22 +36,19 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
+                <a href="#top"  onclick = $("#menu-close").click(); >Daniel Macol</a>
             </li>
             <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+                <a href="#top" onclick = $("#menu-close").click(); >Inicio</a>
             </li>
             <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+                <a href="#about" onclick = $("#menu-close").click(); >Biografia</a>
             </li>
             <li>
-                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
+                <a href="#services" onclick = $("#menu-close").click(); >Portafolio</a>
             </li>
             <li>
-                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
-            </li>
-            <li>
-                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contacto</a>
             </li>
         </ul>
     </nav>
@@ -94,10 +89,8 @@
 
     <!-- jQuery -->
     {!!Html::script('asset/js/jquery.js')!!}
-
     <!-- Bootstrap Core JavaScript -->
     {!!Html::script('asset/js/bootstrap.min.js')!!}
-
     {!!Html::script('asset/js/script.js')!!}
 
 </body>
