@@ -65,12 +65,13 @@ function Mostrar_usr(){
 }
 
 function Mostrar_sec(){
-    $('#table_sec').append("<tr align='center'><td colspan='2'><img src='asset/img/loading.gif' alt='Cargando' width='60' height='60'> </td><td>");
-	var route = "/secciones/listing";
+	var URLactual = window.location;
+    $('#table_sec').append("<tr align='center'><td colspan='2'><img src='../asset/img/loading.gif' alt='Cargando' width='60' height='60'> </td><td>");
+	var route = "/secciones/listing/"+URLactual.search;
 
 	$.get(route, function(res){
 		$('#table_sec').empty();			
-		$.each(res,function(key,value){
+		$.each(res.data,function(key,value){
 		if(value.status == 1){
 		var check = "checked";			
 		}
@@ -80,12 +81,13 @@ function Mostrar_sec(){
 }
 
 function Mostrar_cat(){
-    $('#table_cat').append("<tr align='center'><td colspan='3'><img src='asset/img/loading.gif' alt='Cargando' width='60' height='60'> </td><td>");
-	var route = "/categorias/listing";
+	var URLactual = window.location;
+    $('#table_cat').append("<tr align='center'><td colspan='3'><img src='../asset/img/loading.gif' alt='Cargando' width='60' height='60'> </td><td>");
+	var route = "/categorias/listing"+URLactual.search;
 
 	$.get(route, function(res){
 	    $('#table_cat').empty();
-		$.each(res,function(key,value){
+		$.each(res.data,function(key,value){
 		if(value.status == 1){
 		var check = "checked";			
 		}
@@ -95,12 +97,13 @@ function Mostrar_cat(){
 }
 
 function Mostrar_art(){
-    $('#table_art').append("<tr align='center'><td colspan='3'><img src='asset/img/loading.gif' alt='Cargando' width='60' height='60'> </td><td>");
-	var route = "/articulos/listing";
+	var URLactual = window.location;
+    $('#table_art').append("<tr align='center'><td colspan='3'><img src='../asset/img/loading.gif' alt='Cargando' width='60' height='60'> </td><td>");
+	var route = "/articulos/listing"+URLactual.search;
 
 	$.get(route, function(res){
 	    $('#table_art').empty();
-		$.each(res,function(key,value){
+		$.each(res.data,function(key,value){
 		if(value.status == 1){
 		var check = "checked";			
 		}
@@ -541,12 +544,11 @@ function Elim_pint(){
 function Modal_ver_paint(btn){
     $('#paint').empty();
 	$('#titulos').empty();
-	$('#titulos').html($("#titu").val());
-	$('#paint').append("<tr><td><img src='asset/pinturas/"+btn.value+"' alt=''></td></tr>");
+	$('#titulos').html(btn.id);
+	$('#paint').append("<tr><td><img width='100%' src='../asset/pinturas/"+btn.value+"' alt=''></td></tr>");
 }
 
 function Modal_ver_paint_prin(btn){
-	console.log(btn.id);
     $('#paint').empty();
 	$('#titulos').empty();
 	$('#titulos').html($("#titu").val());

@@ -12,7 +12,7 @@
                     </div>
                   </div>
                 </div><!-- /.box-header -->
-                <div>
+                <div class="box-body table-responsive no-padding">
 <!--                
 <div class="material-switch pull-right">
     <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox"/>
@@ -28,6 +28,7 @@
                     </thead>
                     <tbody id="table_art"></tbody>
                   </table>
+                   <div align="center">{!!$arti->render()!!}</div>
                   <input type="hidden" id="tipo" value="articulos">
                 </div><!-- /.box-body -->
               </div><!-- /.box -->

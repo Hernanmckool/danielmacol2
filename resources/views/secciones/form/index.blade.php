@@ -21,6 +21,7 @@
           </thead>
           <tbody id="table_sec"></tbody>
         </table>
+        <div align="center">{!!$secci->render()!!}</div>
         <input type="hidden" id="tipo" value="secciones">
       </div><!-- /.box-body -->
     </div><!-- /.box -->

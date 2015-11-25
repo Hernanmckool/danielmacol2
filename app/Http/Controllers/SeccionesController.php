@@ -24,13 +24,14 @@ class SeccionesController extends Controller
      */
     public function index()
     {
-        return view('secciones.index');
+        $secci = Secciones::paginate(1);
+        return view('secciones.index', compact('secci'));
     }
 
     public function listing(){
-       $secc = Secciones::all();
+       $secc = Secciones::paginate(1);
        return response()->json(
-            $secc->toArray()
+            $secc
         ); 
     }
 

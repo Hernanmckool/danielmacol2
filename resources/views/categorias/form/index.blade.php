@@ -26,6 +26,7 @@
                     <tbody id="table_cat">
                     </tbody>
                   </table>
+                   <div align="center">{!!$categ->render()!!}</div>
                   <input type="hidden" id="tipo" value="categorias">
                 </div><!-- /.box-body -->
               </div><!-- /.box -->

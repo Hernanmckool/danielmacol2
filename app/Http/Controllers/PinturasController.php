@@ -21,7 +21,7 @@ class PinturasController extends Controller
      */
     public function index()
     {
-        $pints = Pinturas::all();
+        $pints = Pinturas::paginate(6);
         return view('pinturas.index',compact('pints'));
     }
 

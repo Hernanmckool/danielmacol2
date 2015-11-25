@@ -17,7 +17,7 @@ class Articulos extends Model
         return DB::table('articulos')
             ->join('categorias','categorias.id','=','articulos.id_categoria')
             ->select('articulos.*','categorias.categoria')
-            ->get();
+            ->paginate(6);
     }
 
     public static function Count_articulos()

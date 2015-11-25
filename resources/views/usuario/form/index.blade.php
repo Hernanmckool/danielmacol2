@@ -45,6 +45,7 @@ $id = Auth::user()->id;
             </tbody>
             @endforeach
         </table>
+        <div align="center">{!!$users->render()!!}</div>
         <input type="hidden" id="tipo" value="usuario">
       </div><!-- /.box-body -->
     </div><!-- /.box -->

@@ -26,7 +26,8 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        return view('categorias.index');
+        $categ = Categorias::categorias();
+        return view('categorias.index', compact('categ'));
     }
 
     public function listing()
@@ -37,7 +38,7 @@ class CategoriasController extends Controller
         );
     }
 
-    /**
+    /** 
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

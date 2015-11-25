@@ -25,7 +25,7 @@ class Categorias extends Model
         return DB::table('categorias')
             ->join('secciones','secciones.id','=','categorias.id_seccion')
             ->select('categorias.*','secciones.seccion')
-            ->get();
+            ->paginate(6);
     }
     public static function CategoriasPoemas()
     {
