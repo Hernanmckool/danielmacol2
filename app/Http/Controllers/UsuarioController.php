@@ -64,7 +64,7 @@ class UsuarioController extends Controller
             Session::flash('message','Usuario Creado Exitosamente');
             return Redirect::to('/usuario');
         }else {
-            Session::flash('message-error','La contrasena no coincide');
+            Session::flash('message-error','La Contraseña no coincide');
             return Redirect::to('/usuario/create');
         }
     }
@@ -147,10 +147,10 @@ class UsuarioController extends Controller
             $user = User::find($id);
             $user->fill($request->all());
             $user->save();
-            Session::flash('message','Contrasena Editada Exitosamente');
+            Session::flash('message','Contraseña Editada Exitosamente');
             return Redirect::to('/usuario');
         }else {
-            Session::flash('message-error','La contrasena no coincide');
+            Session::flash('message-error','La Contraseña no coincide');
             return Redirect::to($url);
         }
     }

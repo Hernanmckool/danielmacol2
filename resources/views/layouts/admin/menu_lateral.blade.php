@@ -1,6 +1,9 @@
-  <?php
+<?php
   $im=Auth::user()->path;
-  ?>
+  if($im==''){
+    $im= 'usuario.png';
+  }
+?>
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
@@ -28,7 +31,7 @@
                   <li><a href="{!!URL::to('/usuario')!!}"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>
                   <li><a href="{!!URL::to('/secciones')!!}"><i class="ion-briefcase"></i>&nbsp;&nbsp;&nbsp;&nbsp;Secciones</a></li>
                   <li><a href="{!!URL::to('/categorias')!!}"><i class="ion-bag"></i>&nbsp;&nbsp;&nbsp;&nbsp;Categorias</a></li>
-                  <li><a href="{!!URL::to('/articulos')!!}"><i class="ion-clipboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;Articulos</a></li>
+                  <li><a href="{!!URL::to('/articulos')!!}"><i class="ion-clipboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Articulos</a></li>
                   <li><a href="{!!URL::to('/pinturas')!!}"><i class="ion-images"></i>&nbsp;&nbsp;&nbsp;&nbsp;Pinturas</a></li>
                 </ul>
               </li>

@@ -38,5 +38,6 @@
     </div>
 </div>
 {!!Form::close()!!}
+{!!Html::script('asset/js/jquery.js')!!}
 </body>
 </html>

@@ -24,12 +24,12 @@ class SeccionesController extends Controller
      */
     public function index()
     {
-        $secci = Secciones::paginate(1);
+        $secci = Secciones::paginate(6);
         return view('secciones.index', compact('secci'));
     }
 
     public function listing(){
-       $secc = Secciones::paginate(1);
+       $secc = Secciones::paginate(6);
        return response()->json(
             $secc
         ); 

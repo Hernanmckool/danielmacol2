@@ -52,6 +52,7 @@
           {!!Form::password('password2', array('class' => 'form-control','placeholder' => 'Repite la Contraseña'))!!}
         </div>
         </div><!-- /.col-lg-6 -->
+      <input type="hidden" id="status" name="status" value="1">
    	</div><!-- /.row -->
     <br>
 </div><!-- /.box -->

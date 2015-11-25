@@ -41,17 +41,27 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
-
-
-        public function setPasswordAttribute($valor){
+ 
+    public function setPasswordAttribute($valor){
         if(!empty($valor)){
             $this->attributes['password'] = \Hash::make($valor);
         }
     }
-    public static function Count_usuarios()
-    {
+    
+    public static function Count_usuarios(){
         return DB::table('users')
             ->select('users.*')
             ->count();
     }
+
+    public static function buscar_status($email){
+        return DB::table('users')
+            ->where('users.email','=',$email)
+            ->select('users.status')
+            ->get();
+    }
+
 }
+
+
+

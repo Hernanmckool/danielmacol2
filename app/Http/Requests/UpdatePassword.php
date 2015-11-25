@@ -27,4 +27,10 @@ class UpdatePassword extends Request
             'password'=>'required',
         ];
     }
+    public function messages()
+    {
+        return [
+            'password.required' => 'El campo Password no puede estar vacio',
+        ];
+    }
 }

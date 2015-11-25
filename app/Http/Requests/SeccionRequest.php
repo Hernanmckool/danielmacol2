@@ -27,4 +27,10 @@ class SeccionRequest extends Request
             'seccion'=>'required',
         ];
     }
+    public function messages()
+    {
+        return [
+            'seccion.required' => 'El campo Seccion no puede estar vacio',
+        ];
+    }
 }

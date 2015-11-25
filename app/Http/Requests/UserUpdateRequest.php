@@ -26,7 +26,17 @@ class UserUpdateRequest extends Request
         return [
             'nombre'=>'required',
             'apellido'=>'required',
-            'email'=>'required|email',
+            'email'=>'required|email|unique:users',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'nombre.required' => 'El campo Nombre no puede estar vacio',
+            'apellido.required' => 'El campo Apellido no puede estar vacio',
+            'email.required' => 'El campo Email no puede estar vacio',
+            'email.unique' => 'El Email ya existe en el sistema',
+        ];
+    }    
 }

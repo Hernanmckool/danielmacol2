@@ -29,4 +29,14 @@ class ArticuloRequest extends Request
             'id_categoria'=>'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'articulo.required' => 'El campo Articulo no puede estar vacio',
+            'titulo.required' => 'El campo Titulo no puede estar vacio',
+            'id_categoria.required' => 'El campo Categoria no puede estar vacio',
+        ];
+    }
+
 }

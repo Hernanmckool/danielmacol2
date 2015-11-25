@@ -30,4 +30,14 @@ class PinturasRequest extends Request
             'id_categoria'=>'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'titulo.required' => 'El campo Titulo no puede estar vacio',
+            'resena.required' => 'El campo Reseña no puede estar vacio',
+            'path.required' => 'Debe seleccionar una Imagen',
+            'id_categoria.required' => 'El campo Categoria no puede estar vacio',
+        ];
+    }
 }

@@ -7,6 +7,7 @@ use daniel\Http\Requests;
 use daniel\Http\Requests\LoginRequest;
 use daniel\Http\Controllers\Controller;
 use Session;
+use daniel\User;
 use Redirect;
 use Auth;
 
@@ -45,11 +46,26 @@ class LoginController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        if(Auth::attempt(['email'=>$request['email'],'password'=>$request['password']])){
-            return Redirect::to('admin');
-        }
-            Session::flash('message-error','Correo Electronico y Contraseña no coinciden');
+        $email=$request['email'];
+        $statu = User::buscar_status($email);
+        if($statu == []){
+            Session::flash('message-error','Este Usuario no se encuentra registrado en el Sistema');
             return Redirect::to('/login');
+        }else{
+        $status = $statu[0]->status;
+            if($status == 1){
+                if(Auth::attempt(['email'=>$request['email'],'password'=>$request['password']])){
+                    return Redirect::to('admin');
+                }else{
+                    Session::flash('message-error','Correo Electronico y Contraseña no coinciden');
+                    return Redirect::to('/login');
+                }
+            }elseif($status == 0){
+                Session::flash('message-error','El Usuario fue deshabilitado, por favor consulte con el Administrador del Sistema');
+                return Redirect::to('/login');
+            }
+        }
+
     }
 
     /**

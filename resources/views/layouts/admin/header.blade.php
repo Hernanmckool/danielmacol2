@@ -1,6 +1,9 @@
-  <?php
+<?php
   $im=Auth::user()->path;
-  ?>
+  if($im==''){
+    $im= 'usuario.png';
+  }
+?>
       <header class="main-header">
         <!-- Logo -->
         <a href="index2.html" class="logo">

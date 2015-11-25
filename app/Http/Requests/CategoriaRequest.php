@@ -28,4 +28,13 @@ class CategoriaRequest extends Request
         'id_seccion'=>'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'categoria.required' => 'El campo Categoria no puede estar vacio',
+            'id_seccion.required' => 'El campo Seccion no puede estar vacio',
+        ];
+    }
+
 }

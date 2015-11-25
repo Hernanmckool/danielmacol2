@@ -28,4 +28,13 @@ class LoginRequest extends Request
             'password'=>'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'El campo Email no puede estar vacio',
+            'password.required' => 'El campo Password no puede estar vacio',
+        ];
+    }
+
 }
