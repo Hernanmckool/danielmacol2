@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7" >
             <div class="panel panel-info">
               <div class="panel-heading"><h3 class="panel-title">Editar Categorias<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></h3>
               </div>
@@ -16,11 +16,13 @@
                           <input type="hidden" id="id">
                             <tr>
                               <td>Categoria:</td>
-                              <td><input type="text" id="categoria" style="width: 100%;"></td>
+                              <td width="70%"><input type="text" id="categoria" style="width: 100%;"></td>
+                              <td>&nbsp;</td>
                             </tr>
                             <tr>
-                              <td>Descripcion: <label for="">*(Opcional)</label></td>
+                              <td>Descripcion:</td>
                               <td><input type="text" id="descripcion" style="width: 100%;"></td>
+                              <td><label for="">(*)</label></td>
                             </tr>
                             <tr>
                               <td>Seccion:</td>
@@ -29,9 +31,11 @@
                                 <option value="" disabled="true" selected="true">Seleccione la seccion</option>
                                 </select>
                               </td>
+                              <td>&nbsp;</td>
                             </tr>
                           </tbody>
                         </table>                          
+                        <div align="right">(*)opcional</div>
                       </div>
                   </div>
                 </div> 
