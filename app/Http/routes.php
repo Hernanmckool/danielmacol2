@@ -17,7 +17,7 @@ Route::get('/', function () {
  
 Route::get('poema','FrontPoemasController@index');
 Route::get('pintura','FrontPinturasController@index');
-Route::get('admin','FrontPoemasController@admin');
+Route::get('admin',['as' => 'admin', 'uses' => 'FrontPoemasController@admin']);
 Route::get('logout','LoginController@logout');
 Route::get('index_articulos_poemas/{id}','FrontPoemasController@article');
 Route::get('index_articulos_pinturas/{id}','FrontPinturasController@article');
