@@ -15,6 +15,7 @@ Route::get('/', function () {
 });
 */ 
  
+Route::get('/','FrontPoemasController@inicio');
 Route::get('poema','FrontPoemasController@index');
 Route::get('pintura','FrontPinturasController@index');
 Route::get('admin',['as' => 'admin', 'uses' => 'FrontPoemasController@admin']);

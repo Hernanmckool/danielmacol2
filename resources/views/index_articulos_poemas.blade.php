@@ -10,23 +10,11 @@
     <meta name="author" content="">
 
     <title>Daniel Macol</title>
+    <link rel="icon" href="../asset/img/logodm.png">
 
-    <!-- Bootstrap Core CSS -->
     {!!Html::style('asset/css/bootstrap.min.css')!!}
-
-    <!-- Custom CSS -->
     {!!Html::style('asset/css/stylish-portfolio_poemas.css')!!}
-
-    <!-- Custom Fonts -->
-    <link href="" rel="stylesheet" type="text/css">
     {!!Html::style('asset/font-awesome/css/font-awesome.min.css')!!}
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -38,22 +26,19 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
+                <a href="#top"  onclick = $("#menu-close").click(); >Daniel Macol</a>
             </li>
             <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+                <a href="/" onclick = $("#menu-close").click(); >Inicio</a>
             </li>
             <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+                <a href="#about" onclick = $("#menu-close").click(); >Biografia</a>
             </li>
             <li>
-                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
+                <a href="#services" onclick = $("#menu-close").click(); >Portafolio</a>
             </li>
             <li>
-                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
-            </li>
-            <li>
-                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contacto</a>
             </li>
         </ul>
     </nav>
@@ -122,6 +107,7 @@
     <!-- Bootstrap Core JavaScript -->
     {!!Html::script('asset/js/bootstrap.min.js')!!}
 
+    {!!Html::script('asset/js/script.js')!!}
     {!!Html::script('asset/js/script2.js')!!}
 
 </body>

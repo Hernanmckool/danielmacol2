@@ -28,6 +28,12 @@ class FrontPoemasController extends Controller
         return view('index_poemas',compact('cats'));
     }
 
+    public function inicio()
+    {
+        return view('index');
+    }
+
+
     public function admin()
     { 
         $pint_count = Pinturas::count_pinturas();
