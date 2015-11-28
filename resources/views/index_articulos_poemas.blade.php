@@ -57,7 +57,7 @@
               &nbsp;
             </div>
             <!-- /.col-md-4 -->
-            <div style="margin-left: 15px;" class="col-xs-12 col-sm-5 col-md-3 col-lg-4">
+            <div style="margin-left: 15px;" class="col-xs-11 col-sm-5 col-md-3 col-lg-4">
                 <h3>@foreach($art_cat as $cat)
                     <p> <strong>{{$cat->categoria}}</strong> </p>
                 @endforeach
