@@ -16,7 +16,7 @@ class FrontPoemasController extends Controller
 
     public function __construct(){
         $this->middleware('auth', ['only'=>'admin']);
-    }
+    } 
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +24,7 @@ class FrontPoemasController extends Controller
      */
     public function index()
     {
-        $cats = Categorias::all();
+        $cats = Categorias::CategoriasPoemas();
         return view('index_poemas',compact('cats'));
     }
 

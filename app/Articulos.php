@@ -31,6 +31,7 @@ class Articulos extends Model
     {
         return DB::table('articulos')
             ->where('articulos.id_categoria','=',$id)
+            ->where('articulos.status','=','1')
             ->join('categorias','categorias.id','=','articulos.id_categoria')
             ->select('articulos.*','categorias.categoria')
             ->get();
@@ -49,6 +50,7 @@ class Articulos extends Model
     {
         return DB::table('articulos')
             ->where('articulos.id_categoria','=',$id)
+            ->where('articulos.status','=','1')
             ->join('categorias','categorias.id','=','articulos.id_categoria')
             ->select( DB::raw('DISTINCT(categoria)') )
             ->get();

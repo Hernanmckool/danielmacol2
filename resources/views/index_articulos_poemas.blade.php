@@ -60,7 +60,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2" align="center"><br>
-                <a href="/">
+                <a href="/poema">
                     {!!Html::image('asset/img/bg.jpg', 'User Image')!!}
                 </a>
             </div>

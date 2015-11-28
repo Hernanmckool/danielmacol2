@@ -31,6 +31,7 @@ class Pinturas extends Model
     {
         return DB::table('categorias')
             ->where('categorias.id','=',$id)
+            ->where('categorias.status','=','1')
             ->select('categorias.*')
             ->get();
     }
@@ -38,6 +39,7 @@ class Pinturas extends Model
     {
         return DB::table('pinturas')
             ->where('pinturas.id_categoria','=',$id)
+            ->where('pinturas.status','=','1')
             ->join('categorias','categorias.id','=','pinturas.id_categoria')
             ->select('pinturas.*','categorias.categoria')
             ->paginate(4);
