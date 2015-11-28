@@ -46,7 +46,7 @@ function Mostrar(lnk){
 
 	$.get(route, function(res){
 		$.each(res,function(key,value){
-		$('#table').append('<tr><td><h2>'+value.titulo+'</h2></td></tr><tr><td>'+value.articulo+'</td></tr>')
+		$('#table').append('<tr><td><h2>'+value.titulo+'</h2></td></tr><tr><td align="justify">'+value.articulo+'</td></tr>')
 
 		});		
 

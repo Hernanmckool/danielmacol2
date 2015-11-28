@@ -45,30 +45,19 @@
 
     <!-- Header -->
     <!-- About -->
-        <div class="container">
+<br>
+
         <div class="row">
-            <div class="col-lg-12">
-                <div>&nbsp;</div>
-            </div>
-            <div class="col-lg-12">
-                <div>&nbsp;</div>
-            </div>
-            <div class="col-lg-12">
-                <div>&nbsp;</div>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2" align="center"><br>
-                <a href="/poema">
-                    {!!Html::image('asset/img/bg.jpg', 'User Image')!!}
+            <div class="col-xs-12 col-sm-2 col-md-3 col-lg-1" align="center"><br>
+                <a href="{{URL::to('/poema')}}">
+                    {!!Html::image('asset/img/bg.jpg','alt', array( 'width' => 200, 'height' => 200 ))!!}
                 </a>
             </div>
-            <div class="col-xs-0 col-sm-2 col-md-3 col-lg-1">
+            <div class="col-xs-1 col-sm-2 col-md-3 col-lg-1">
               &nbsp;
             </div>
             <!-- /.col-md-4 -->
-            <div class="col-xs-12 col-sm-5 col-md-3 col-lg-4">
+            <div style="margin-left: 15px;" class="col-xs-12 col-sm-5 col-md-3 col-lg-4">
                 <h3>@foreach($art_cat as $cat)
                     <p> <strong>{{$cat->categoria}}</strong> </p>
                 @endforeach
@@ -79,7 +68,7 @@
                 @endforeach
             </div>
             <!-- /.col-md-4 -->
-            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-5">
+            <div style="margin-left: 15px;" class="col-xs-11 col-sm-11 col-md-3 col-lg-5">
             <table id="table"></table>
             </div>
             <!-- /.col-md-4 -->

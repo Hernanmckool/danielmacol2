@@ -47,7 +47,9 @@
     <header id="top">
     <br>
     <div align="center">
+    <a href="/" title="Daniel Macol">
         {!!Html::image('asset/img/bg.jpg', 'Logo danielmacol')!!} <br>
+    </a>
         {!!Html::image('asset/img/star.png', 'Star')!!}
 	</div>
     </header> 

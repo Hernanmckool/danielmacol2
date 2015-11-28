@@ -47,7 +47,9 @@
     <header id="top">
     <br>
     <div align="center">
+    <a href="{{URL::to('/')}}">
         {!!Html::image('asset/img/bg2.jpg', 'Logo danielmacol')!!} <br>
+    </a>
         {!!Html::image('asset/img/star.png', 'Star')!!}
     </div>
     </header> 
