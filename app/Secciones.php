@@ -18,4 +18,12 @@ class Secciones extends Model
             ->count();
     }
 
+    public static function status($id){
+        return DB::table('secciones')
+            ->where('id','=',$id)
+            ->select('status')
+            ->get();
+    }
+
+
 }

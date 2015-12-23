@@ -30,7 +30,22 @@ class FrontPoemasController extends Controller
 
     public function inicio()
     {
-        return view('index');
+        $status_poem = Secciones::status(1);
+        $status_pint = Secciones::status(2);
+        $status_poemas = $status_poem[0]->status;
+        $status_pinturas = $status_pint[0]->status;
+
+        if($status_poemas==0 && $status_pinturas==0){
+            return view('index_mantenimiento');
+        }elseif($status_pinturas==0){
+            $cats = Categorias::CategoriasPoemas();
+            return view('index_poemas',compact('cats'));
+        }elseif($status_poemas==0){
+            $cats = Categorias::CategoriasPinturas();
+            return view('index_pinturas',compact('cats'));
+        }elseif($status_poemas==1 && $status_pinturas==1){
+            return view('index');            
+        }
     }
 
 

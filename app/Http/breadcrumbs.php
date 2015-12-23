@@ -12,6 +12,12 @@ Breadcrumbs::register('usuario.index', function($breadcrumbs)
     $breadcrumbs->push('Usuarios', route('usuario.index'));
 });
 
+Breadcrumbs::register('usuario.edit', function($breadcrumbs)
+{
+    $breadcrumbs->parent('usuario.index');
+    $breadcrumbs->push('Editar Usuarios', route('usuario.edit'));
+});
+
 Breadcrumbs::register('secciones.index', function($breadcrumbs)
 {
     $breadcrumbs->parent('admin');
@@ -58,6 +64,12 @@ Breadcrumbs::register('pinturas.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('pinturas.index');
     $breadcrumbs->push('Crear Pinturas', route('pinturas.create'));
+});
+
+Breadcrumbs::register('pinturas.edit', function($breadcrumbs)
+{
+    $breadcrumbs->parent('pinturas.index');
+    $breadcrumbs->push('Editar Pinturas', route('pinturas.edit'));
 });
 
 Breadcrumbs::register('secciones.create', function($breadcrumbs)
